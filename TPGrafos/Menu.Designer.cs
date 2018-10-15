@@ -1,6 +1,6 @@
 ﻿namespace TPGrafos
 {
-    partial class Form1
+    partial class Menu
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,13 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.AbirArquivo = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // AbirArquivo
+            // 
+            this.AbirArquivo.Location = new System.Drawing.Point(336, 405);
+            this.AbirArquivo.Name = "AbirArquivo";
+            this.AbirArquivo.Size = new System.Drawing.Size(75, 23);
+            this.AbirArquivo.TabIndex = 0;
+            this.AbirArquivo.Text = "Abrir arquivo";
+            this.AbirArquivo.UseVisualStyleBackColor = true;
+            this.AbirArquivo.Click += new System.EventHandler(this.AbirArquivo_Click);
+            // 
+            // Menu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.AbirArquivo);
+            this.Name = "Menu";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button AbirArquivo;
     }
 }
 
