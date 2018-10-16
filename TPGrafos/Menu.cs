@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPGrafos.Classes;
 using System.IO;
 
 namespace TPGrafos
@@ -25,11 +26,7 @@ namespace TPGrafos
             biblioteca.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
 
             if (biblioteca.ShowDialog() == DialogResult.OK){
-                var arq = biblioteca.OpenFile();
-           
-                using (StreamReader reader = new StreamReader(arq)){
-                    conteudo = reader.ReadToEnd();
-                }
+                conteudo = LeitorArquivo.LerArquivo(biblioteca.OpenFile());
                 MessageBox.Show(conteudo);
             }
         }

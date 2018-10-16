@@ -9,12 +9,17 @@ namespace TPGrafos.Classes
 {
     static class LeitorArquivo
     {
-        public static string lerArquivo(Stream caminho){
+        public static string LerArquivo(Stream caminho){
 
             using (StreamReader reader = new StreamReader(caminho))
             {
                 return reader.ReadToEnd();
             }
+        }
+
+        public static string LimparArq()
+        {
+
         }
     }
 }
