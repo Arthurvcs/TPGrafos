@@ -8,5 +8,21 @@ namespace TPGrafos.Classes
 {
     class Aresta
     {
+        private int peso;
+        private Vertice vOrigem;
+        private Vertice vDestino;
+
+        public Aresta(Vertice origem, Vertice destino, int peso)
+        {
+            this.vOrigem = origem;
+            this.vDestino = destino;
+            this.peso = peso;
+        }
+
+        public int Peso
+        {
+            get { return this.peso; }
+            set { this.peso = value; }
+        }
     }
 }

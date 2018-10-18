@@ -47,7 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Aresta.cs" />
+    <Compile Include="Classes\Estruturas\ListaArestas.cs" />
+    <Compile Include="Classes\Estruturas\ListaVertices.cs" />
+    <Compile Include="Classes\GDirigido.cs" />
     <Compile Include="Classes\Grafo.cs" />
+    <Compile Include="Classes\GNaoDirigido.cs" />
     <Compile Include="Classes\LeitorArquivo.cs" />
     <Compile Include="Classes\Vertice.cs" />
     <Compile Include="Menu.cs">

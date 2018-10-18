@@ -16,10 +16,5 @@ namespace TPGrafos.Classes
                 return reader.ReadToEnd();
             }
         }
-
-        public static string LimparArq()
-        {
-
-        }
     }
 }

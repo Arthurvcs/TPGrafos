@@ -29,6 +29,13 @@ namespace TPGrafos
                 conteudo = LeitorArquivo.LerArquivo(biblioteca.OpenFile());
                 MessageBox.Show(conteudo);
             }
+
+            Vertice v1 = new Vertice();
+            Vertice v2 = new Vertice();
+
+            
+            Aresta teste = new Aresta(v1, v2, 2);
+            MessageBox.Show(teste.Peso.ToString());
         }
     }
 }
