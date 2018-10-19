@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TPGrafos.Classes.Estruturas;
 
 namespace TPGrafos.Classes
 {
-    class Aresta
+    class Aresta : IDados
     {
         private int peso;
         private Vertice vOrigem;

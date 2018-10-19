@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPGrafos.Classes.Estruturas
 {
-    class ListaVertices
+    interface IDados
     {
     }
 }

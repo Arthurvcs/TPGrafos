@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPGrafos.Classes.Estruturas
 {
-    class ListaArestas
+    class ListaAresta : Lista
     {
     }
 }

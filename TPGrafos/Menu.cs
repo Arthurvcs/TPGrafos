@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPGrafos.Classes;
 using System.IO;
+using TPGrafos.Classes.Estruturas;
 
 namespace TPGrafos
 {
@@ -21,21 +22,25 @@ namespace TPGrafos
 
         private void AbirArquivo_Click(object sender, EventArgs e)
         {
-            string conteudo;
+            string[] conteudo;
+            ListaAresta aresta = new ListaAresta();
+            ListaVertice vertice = new ListaVertice();
+
             OpenFileDialog biblioteca = new OpenFileDialog();
             biblioteca.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
 
             if (biblioteca.ShowDialog() == DialogResult.OK){
                 conteudo = LeitorArquivo.LerArquivo(biblioteca.OpenFile());
-                MessageBox.Show(conteudo);
+
+                for (int i = 0; i < conteudo.Length; i++)
+                {
+                    vertice.GerarLista(int.Parse(conteudo[0]));
+                    aresta.Adicionar(new Aresta(new Vertice(int.Parse(conteudo[1])), new Vertice(int.Parse(conteudo[2])), int.Parse(conteudo[3])));
+                }
+
+                MessageBox.Show("show");
             }
-
-            Vertice v1 = new Vertice();
-            Vertice v2 = new Vertice();
-
-            
-            Aresta teste = new Aresta(v1, v2, 2);
-            MessageBox.Show(teste.Peso.ToString());
         }
     }
-}
+    }
+

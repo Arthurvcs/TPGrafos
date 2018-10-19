@@ -47,8 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Aresta.cs" />
-    <Compile Include="Classes\Estruturas\ListaArestas.cs" />
-    <Compile Include="Classes\Estruturas\ListaVertices.cs" />
+    <Compile Include="Classes\Estruturas\Elemento.cs" />
+    <Compile Include="Classes\Estruturas\IDados.cs" />
+    <Compile Include="Classes\Estruturas\Lista.cs" />
+    <Compile Include="Classes\Estruturas\ListaAresta.cs" />
+    <Compile Include="Classes\Estruturas\ListaVertice.cs" />
     <Compile Include="Classes\GDirigido.cs" />
     <Compile Include="Classes\Grafo.cs" />
     <Compile Include="Classes\GNaoDirigido.cs" />

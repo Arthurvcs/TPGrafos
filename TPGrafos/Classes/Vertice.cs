@@ -7,11 +7,18 @@ using TPGrafos.Classes.Estruturas;
 
 namespace TPGrafos.Classes
 {
-    class Vertice
+    class Vertice : IDados
     {
         private int nome { get; set; }
         private int grau { get; set; }
-        private ListaArestas arestas;
+        private Lista arestas;
+
+        public Vertice() { }
+
+        public Vertice(int nome)
+        {
+            this.nome = nome;
+        }
 
         public int Nome
         {

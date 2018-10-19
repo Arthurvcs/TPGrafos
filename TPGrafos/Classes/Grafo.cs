@@ -9,7 +9,19 @@ namespace TPGrafos.Classes
 {
     class Grafo
     {
-        protected ListaVertices Vertices;
-        protected ListaArestas Arestas;
+        protected Lista vertices;
+        protected Lista arestas;
+
+        public Lista Vertice
+        {
+            get { return this.vertices; }
+            set { this.vertices = value; }
+        }
+
+        public Lista Aresta
+        {
+            get { return this.arestas; }
+            set { this.arestas = value; }
+        }
     }
 }
