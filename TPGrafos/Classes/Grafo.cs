@@ -12,6 +12,12 @@ namespace TPGrafos.Classes
         protected Lista vertices;
         protected Lista arestas;
 
+        public Grafo(Lista vertices, Lista arestas)
+        {
+            this.vertices = vertices;
+            this.arestas = arestas;
+        }
+
         public Lista Vertice
         {
             get { return this.vertices; }

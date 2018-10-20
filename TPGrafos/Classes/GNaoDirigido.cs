@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TPGrafos.Classes.Estruturas;
 
 namespace TPGrafos.Classes
 {
-    class GNaoDirigido : Grafo
+    internal class GNaoDirigido : Grafo
     {
+        public GNaoDirigido(Lista vertices, Lista arestas) : base(vertices, arestas)
+        {
+        }
+
         //public bool IsAdjacente(Vertice v1, Vertice v2){}
 
         //public int GetGrau(Vertice v1){}
@@ -35,5 +40,6 @@ namespace TPGrafos.Classes
         //public GNaoDirigido GetAGMKruscal(Vertice v1){}
 
         //public int GetCutVertices(){}
+
     }
 }

@@ -22,25 +22,17 @@ namespace TPGrafos
 
         private void AbirArquivo_Click(object sender, EventArgs e)
         {
-            string[] conteudo;
-            ListaAresta aresta = new ListaAresta();
-            ListaVertice vertice = new ListaVertice();
-
             OpenFileDialog biblioteca = new OpenFileDialog();
             biblioteca.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
 
-            if (biblioteca.ShowDialog() == DialogResult.OK){
-                conteudo = LeitorArquivo.LerArquivo(biblioteca.OpenFile());
-
-                for (int i = 0; i < conteudo.Length; i++)
-                {
-                    vertice.GerarLista(int.Parse(conteudo[0]));
-                    aresta.Adicionar(new Aresta(new Vertice(int.Parse(conteudo[1])), new Vertice(int.Parse(conteudo[2])), int.Parse(conteudo[3])));
-                }
-
-                MessageBox.Show("show");
+            if (biblioteca.ShowDialog() == DialogResult.OK)
+            {
+                Grafo teste;
+                teste = LeitorArquivo.GeraGrafo(biblioteca.OpenFile());
             }
+            MessageBox.Show("show");
         }
     }
-    }
+}
+    
 
