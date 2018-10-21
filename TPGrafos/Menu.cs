@@ -27,8 +27,8 @@ namespace TPGrafos
 
             if (biblioteca.ShowDialog() == DialogResult.OK)
             {
-                Grafo teste;
-                teste = LeitorArquivo.GeraGrafo(biblioteca.OpenFile());
+                Grafo teste =
+                   new Grafo(biblioteca.OpenFile());
             }
             MessageBox.Show("show");
         }

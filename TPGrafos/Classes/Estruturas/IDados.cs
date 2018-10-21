@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPGrafos.Classes.Estruturas
 {
-    interface IDados
+    interface IDados : IEquatable<IDados>
     {
     }
 }
