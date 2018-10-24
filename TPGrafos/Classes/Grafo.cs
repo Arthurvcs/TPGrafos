@@ -67,7 +67,12 @@ namespace TPGrafos.Classes
                 vertices.GerarLista(int.Parse(infoGrafo[0]));
                 for (int i = 1; i < linhasArquivo.Length; i++)
                 {
-                    arestas.Adicionar(new Aresta(new Vertice(int.Parse(infoGrafo[i])), new Vertice(int.Parse(infoGrafo[i + 1])), int.Parse(infoGrafo[i + 2])));
+                    Aresta aux = new Aresta(new Vertice(int.Parse(infoGrafo[i])), new Vertice(int.Parse(infoGrafo[i + 1])), int.Parse(infoGrafo[i + 2]));
+                    arestas.Adicionar(aux);
+
+
+                    vertices.Buscar(/*int nome*/ int.Parse(infoGrafo[i])).listaAresta.Adicionar(aux);
+                    vertices.buscar(/*int nome*/ int.Parse(infoGrafo[i + 1])).listaAresta.Adicionar(aux);
                 }
                 return g = new Grafo(arestas, vertices);
             }

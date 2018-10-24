@@ -8,5 +8,6 @@ namespace TPGrafos.Classes.Estruturas
 {
     class ListaAresta : Lista
     {
+        
     }
 }

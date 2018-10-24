@@ -11,6 +11,12 @@ namespace TPGrafos.Classes
     {
         private int nome { get; set; }
         private int grau { get; set; }
+
+        public static explicit operator Vertice(Elemento v)
+        {
+            throw new NotImplementedException();
+        }
+
         private Lista arestas;
 
         public Vertice() { }
@@ -30,6 +36,22 @@ namespace TPGrafos.Classes
         {
             get { return this.grau; }
             set { this.grau = value; }
+        }
+
+        public Lista Arestas {
+            get { return this.arestas; }
+            set { this.arestas = value; }
+        }
+
+        public bool Equals(IDados other)
+        {
+            Vertice aux = (Vertice)other;
+            if (this.nome == aux.nome)
+            {
+                return true;
+            }
+            else
+                return false;
         }
     }
 }

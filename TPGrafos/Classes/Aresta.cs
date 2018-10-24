@@ -25,5 +25,17 @@ namespace TPGrafos.Classes
             get { return this.peso; }
             set { this.peso = value; }
         }
+
+        public Vertice Origem
+        {
+            get { return this.vOrigem; }
+            set { this.vOrigem = value; }
+        }
+
+        public Vertice Destino
+        {
+            get { return this.vDestino; }
+            set { this.vDestino = value; }
+        }
     }
 }
