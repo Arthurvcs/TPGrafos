@@ -37,5 +37,10 @@ namespace TPGrafos.Classes
             get { return this.vDestino; }
             set { this.vDestino = value; }
         }
+
+        public bool Equals(IDados other)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

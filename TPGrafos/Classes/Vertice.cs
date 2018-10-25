@@ -11,19 +11,14 @@ namespace TPGrafos.Classes
     {
         private int nome { get; set; }
         private int grau { get; set; }
+        private ListaAresta arestas;
 
-        public static explicit operator Vertice(Elemento v)
-        {
-            throw new NotImplementedException();
-        }
-
-        private Lista arestas;
-
-        public Vertice() { }
+        public Vertice() { this.arestas = new ListaAresta(); }
 
         public Vertice(int nome)
         {
             this.nome = nome;
+            this.arestas = new ListaAresta();
         }
 
         public int Nome
@@ -38,7 +33,7 @@ namespace TPGrafos.Classes
             set { this.grau = value; }
         }
 
-        public Lista Arestas {
+        public ListaAresta Arestas {
             get { return this.arestas; }
             set { this.arestas = value; }
         }

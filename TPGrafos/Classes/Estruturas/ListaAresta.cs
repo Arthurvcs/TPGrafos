@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace TPGrafos.Classes.Estruturas
 {
     class ListaAresta : Lista
-    {
-        
+    {      
     }
 }

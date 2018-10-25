@@ -51,6 +51,7 @@ namespace TPGrafos.Classes
             Grafo g;
             ListaAresta arestas = new ListaAresta();
             ListaVertice vertices = new ListaVertice();
+           
 
             string arquivo = LeitorArquivo.LerArquivo(caminho);//As linhas do arquivos sem tratamento
             string[] infoGrafo = LeitorArquivo.FormatarArquivo(arquivo);// Vetor com o arquivo tratado
@@ -64,15 +65,33 @@ namespace TPGrafos.Classes
             }
             else //Não é orientado
             {
-                vertices.GerarLista(int.Parse(infoGrafo[0]));
+                ListaVertice ListaAux = new ListaVertice();
+                ListaAux.GerarLista(int.Parse(infoGrafo[0]));
+
                 for (int i = 1; i < linhasArquivo.Length; i++)
                 {
-                    Aresta aux = new Aresta(new Vertice(int.Parse(infoGrafo[i])), new Vertice(int.Parse(infoGrafo[i + 1])), int.Parse(infoGrafo[i + 2]));
-                    arestas.Adicionar(aux);
+                    //Lista de arestas
+                    Aresta auxA = new Aresta(new Vertice(int.Parse(infoGrafo[i])), new Vertice(int.Parse(infoGrafo[i + 1])), int.Parse(infoGrafo[i + 2]));
+                    arestas.Adicionar(auxA);
 
-
-                    vertices.Buscar(/*int nome*/ int.Parse(infoGrafo[i])).listaAresta.Adicionar(aux);
-                    vertices.buscar(/*int nome*/ int.Parse(infoGrafo[i + 1])).listaAresta.Adicionar(aux);
+                    //Vertices auxiliares
+                    Vertice vOrigem = (Vertice)ListaAux.Buscar(auxA.Origem);
+                    Vertice vDestino = (Vertice)ListaAux.Buscar(auxA.Destino);
+                
+                    //Verificando se a origem não é nula
+                    //Caso não seja, eu adiciono a aresta no Vértice de origem, e adiciono o vértice na lista de vértice
+                    if ( vOrigem != null)
+                    {
+                        vOrigem.Arestas.Adicionar(auxA);
+                        vertices.Adicionar(vOrigem);   
+                    }
+                    //Verificando se o destino não é nulo
+                    //Caso não seja, eu adiciono a aresta no Vértice de destino, e adiciono o vértice na lista de vértice
+                    if (vDestino != null)
+                    {
+                        vDestino.Arestas.Adicionar(auxA);
+                        vertices.Adicionar(vDestino);
+                    }
                 }
                 return g = new Grafo(arestas, vertices);
             }
