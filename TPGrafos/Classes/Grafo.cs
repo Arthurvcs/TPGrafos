@@ -10,19 +10,18 @@ namespace TPGrafos.Classes
 {
     class Grafo
     {
-        protected Lista vertices;
-        protected Lista arestas;
+        protected ListaAresta vertices;
+        protected ListaVertice arestas;
 
         public Grafo(Stream arquivo)
         {
             GeraGrafo(arquivo);
         }
-        public Grafo(Lista vertices, Lista arestas)
+        public Grafo(ListaAresta vertices, ListaVertice arestas)
         {
             this.vertices = vertices;
             this.arestas = arestas;
         }
-
 
         /// <summary>
         /// Método para verificar se o grafo é orientado
@@ -46,12 +45,10 @@ namespace TPGrafos.Classes
         /// </summary>
         /// <param name="caminho">o arquivo que o usuário informa</param>
         /// <returns>Retorna um grafo</returns>
-        public static Grafo GeraGrafo(Stream caminho)
+        private static Grafo GeraGrafo(Stream caminho)
         {
             Grafo g;
-            ListaAresta arestas = new ListaAresta();
-            ListaVertice vertices = new ListaVertice();
-           
+
 
             string arquivo = LeitorArquivo.LerArquivo(caminho);//As linhas do arquivos sem tratamento
             string[] infoGrafo = LeitorArquivo.FormatarArquivo(arquivo);// Vetor com o arquivo tratado
@@ -65,35 +62,29 @@ namespace TPGrafos.Classes
             }
             else //Não é orientado
             {
-                ListaVertice ListaAux = new ListaVertice();
-                ListaAux.GerarLista(int.Parse(infoGrafo[0]));
-
-                for (int i = 1; i < linhasArquivo.Length; i++)
+                for (int i = 1; i < infoGrafo.Length; i = i + 3)
                 {
                     //Lista de arestas
                     Aresta auxA = new Aresta(new Vertice(int.Parse(infoGrafo[i])), new Vertice(int.Parse(infoGrafo[i + 1])), int.Parse(infoGrafo[i + 2]));
                     arestas.Adicionar(auxA);
 
-                    //Vertices auxiliares
-                    Vertice vOrigem = (Vertice)ListaAux.Buscar(auxA.Origem);
-                    Vertice vDestino = (Vertice)ListaAux.Buscar(auxA.Destino);
-                
-                    //Verificando se a origem não é nula
-                    //Caso não seja, eu adiciono a aresta no Vértice de origem, e adiciono o vértice na lista de vértice
-                    if ( vOrigem != null)
+                    if (vertices.Buscar(auxA.Origem) == null)
                     {
-                        vOrigem.Arestas.Adicionar(auxA);
-                        vertices.Adicionar(vOrigem);   
+                        vertices.Adicionar(auxA.Origem);
+                        vertices.BuscarAdicionarOrigem(auxA);
                     }
-                    //Verificando se o destino não é nulo
-                    //Caso não seja, eu adiciono a aresta no Vértice de destino, e adiciono o vértice na lista de vértice
-                    if (vDestino != null)
+                    else
+                    {vertices.BuscarVertice(auxA.Origem).Arestas.Adicionar(auxA);}
+
+                    if (vertices.Buscar(auxA.Destino) == null)
                     {
-                        vDestino.Arestas.Adicionar(auxA);
-                        vertices.Adicionar(vDestino);
+                        vertices.Adicionar(auxA.Destino);
+                        vertices.BuscarAdicionarDestino(auxA);
                     }
+                    else
+                    { vertices.BuscarVertice(auxA.Destino).Arestas.Adicionar(auxA); }
                 }
-                return g = new Grafo(arestas, vertices);
+                return g = new GNaoDirigido(vertices, arestas);
             }
         }
 

@@ -15,7 +15,9 @@ namespace TPGrafos.Classes
 
         //public bool IsAdjacente(Vertice v1, Vertice v2){}
 
-        //public int GetGrau(Vertice v1){}
+        public int GetGrau(Vertice v1) {
+            vertices.Buscar
+        }
 
         //public bool IsIsolado(Vertice v1){}
 
