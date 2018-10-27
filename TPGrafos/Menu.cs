@@ -27,8 +27,9 @@ namespace TPGrafos
 
             if (biblioteca.ShowDialog() == DialogResult.OK)
             {
-                Grafo teste =
-                   new Grafo(biblioteca.OpenFile());
+                GNaoDirigido teste = new GNaoDirigido();
+                    teste = (GNaoDirigido)teste.GetGrafo(biblioteca.OpenFile());
+                teste.IsIsolado(new Vertice(3));
             }
             MessageBox.Show("show");
         }

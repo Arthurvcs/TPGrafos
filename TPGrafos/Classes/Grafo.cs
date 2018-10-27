@@ -10,14 +10,17 @@ namespace TPGrafos.Classes
 {
     class Grafo
     {
-        protected ListaAresta vertices;
-        protected ListaVertice arestas;
+        protected ListaVertice vertices;
+        protected ListaAresta arestas;
 
-        public Grafo(Stream arquivo)
+        public Grafo()
+        {}
+
+        public virtual Grafo GetGrafo(Stream arquivo)
         {
-            GeraGrafo(arquivo);
+            return GeraGrafo(arquivo);
         }
-        public Grafo(ListaAresta vertices, ListaVertice arestas)
+        public Grafo(ListaVertice vertices, ListaAresta arestas)
         {
             this.vertices = vertices;
             this.arestas = arestas;
@@ -45,10 +48,11 @@ namespace TPGrafos.Classes
         /// </summary>
         /// <param name="caminho">o arquivo que o usuário informa</param>
         /// <returns>Retorna um grafo</returns>
-        private static Grafo GeraGrafo(Stream caminho)
+        protected static Grafo GeraGrafo(Stream caminho)
         {
             Grafo g;
-
+            ListaVertice vertices = new ListaVertice();
+            ListaAresta arestas = new ListaAresta();          
 
             string arquivo = LeitorArquivo.LerArquivo(caminho);//As linhas do arquivos sem tratamento
             string[] infoGrafo = LeitorArquivo.FormatarArquivo(arquivo);// Vetor com o arquivo tratado
@@ -58,10 +62,14 @@ namespace TPGrafos.Classes
             if (IsDigrafo(arquivo))
             {
                 //teste de retorno
-                return g = new Grafo(arestas, vertices);
+                return g = new Grafo(vertices, arestas);
             }
             else //Não é orientado
             {
+                g = new GNaoDirigido();
+
+                vertices.GerarLista(int.Parse(infoGrafo[0]));
+
                 for (int i = 1; i < infoGrafo.Length; i = i + 3)
                 {
                     //Lista de arestas
@@ -74,7 +82,7 @@ namespace TPGrafos.Classes
                         vertices.BuscarAdicionarOrigem(auxA);
                     }
                     else
-                    {vertices.BuscarVertice(auxA.Origem).Arestas.Adicionar(auxA);}
+                    { vertices.BuscarVertice(auxA.Origem).Arestas.Adicionar(auxA);}
 
                     if (vertices.Buscar(auxA.Destino) == null)
                     {
@@ -88,13 +96,13 @@ namespace TPGrafos.Classes
             }
         }
 
-        public Lista Vertice
+        public ListaVertice Vertice
         {
             get { return this.vertices; }
             set { this.vertices = value; }
         }
 
-        public Lista Aresta
+        public ListaAresta Aresta
         {
             get { return this.arestas; }
             set { this.arestas = value; }

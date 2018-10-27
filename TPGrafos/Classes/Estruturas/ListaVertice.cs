@@ -25,14 +25,14 @@ namespace TPGrafos.Classes.Estruturas
             if (auxDestino != null)
             { a.Destino.Arestas.Adicionar(a); }
         }
-        //public void GerarLista(int tamanho)
-        //{
-        //    for (int i = 0; i < tamanho; i++)
-        //    {
-        //        var aux = new Vertice();
-        //        Adicionar(aux);
-        //        aux.Nome = i + 1;
-        //    }
-        //}
+        public void GerarLista(int tamanho)
+        {
+            for (int i = 0; i < tamanho; i++)
+            {
+                var aux = new Vertice();
+                Adicionar(aux);
+                aux.Nome = i + 1;
+            }
+        }
     }
 }
