@@ -8,7 +8,7 @@ using TPGrafos.Classes.Estruturas;
 
 namespace TPGrafos.Classes
 {
-    internal class GNaoDirigido : Grafo
+    class GNaoDirigido : Grafo
     {
         public GNaoDirigido(){}
 

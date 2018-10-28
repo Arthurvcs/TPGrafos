@@ -34,5 +34,17 @@ namespace TPGrafos.Classes.Estruturas
                 aux.Nome = i + 1;
             }
         }
+        public Vertice[] GeraVetor()
+        {
+            Vertice[] vetor = new Vertice[this.Tamanho];
+            Elemento aux = this.pri.Prox;
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                vetor[i] = (Vertice)aux.Dados;
+                aux = aux.Prox;
+            }
+            return vetor;
+        }
+
     }
 }

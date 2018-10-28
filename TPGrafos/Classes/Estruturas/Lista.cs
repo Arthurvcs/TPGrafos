@@ -39,7 +39,6 @@ namespace TPGrafos.Classes.Estruturas
             }
             return null;
         }
-
         public int Tamanho { get; set; }
     }
 }

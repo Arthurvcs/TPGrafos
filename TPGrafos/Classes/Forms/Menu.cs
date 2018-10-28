@@ -29,12 +29,26 @@ namespace TPGrafos
             if (biblioteca.ShowDialog() == DialogResult.OK)
             {
                 Grafo g = new Grafo();
-                if (g.digrafo) { }
+                if (!g.digrafo) {
+
+                    g = (GNaoDirigido)g.GetGrafo(biblioteca.OpenFile());
+                    
+                    MenuGNaoDirigido MenuGNaoDirigido = new MenuGNaoDirigido((GNaoDirigido)g, biblioteca.FileName);
+                    this.Hide();
+                    MenuGNaoDirigido.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    Digrafo MenuGDirigido = new Digrafo((GDirigido)g);
+                    this.Hide();
+                    MenuGDirigido.ShowDialog();
+                    this.Close();
+                }
 
                 //    grafo = (GNaoDirigido)grafo.GetGrafo(biblioteca.OpenFile());
                 //grafo.IsAdjacente(new Vertice(1) ,new Vertice(3));
             }
-            MessageBox.Show("show");
         }
     }
 }

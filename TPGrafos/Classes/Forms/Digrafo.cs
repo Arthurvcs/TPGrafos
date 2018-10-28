@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPGrafos.Classes;
 
 namespace TPGrafos
 {
-    public partial class Digrafo : Form
+    partial class Digrafo : Form
     {
-        public Digrafo()
+        private GDirigido g; 
+
+        public Digrafo(GDirigido g)
         {
             InitializeComponent();
+            this.g = g;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
+
+        public GDirigido grafo { get { return this.g; } set { this.g = value; } }
     }
 }
