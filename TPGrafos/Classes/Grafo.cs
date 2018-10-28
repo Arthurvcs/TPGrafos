@@ -12,7 +12,6 @@ namespace TPGrafos.Classes
     {
         protected ListaVertice vertices;
         protected ListaAresta arestas;
-        public bool digrafo;
 
         public Grafo()
         {}
@@ -35,15 +34,15 @@ namespace TPGrafos.Classes
         /// True: É orientado 
         /// False: não é orientado
         /// </returns>
-        private bool IsDigrafo(string arquivo)
+        private static bool IsDigrafo(string arquivo)
         {
             string[] linhas = arquivo.Replace("\r", "").Split('\n');
             if(linhas.Length == 1)
-            { return this.digrafo = false; }
+            { return false; }
             linhas = linhas[1].Replace("\r", "").Split('\n', ';');
 
-            if (linhas.Length == 3) { return this.digrafo = false; }
-            else { return this.digrafo = true; }
+            if (linhas.Length == 3) { return false; }
+            else { return true; }
         }
 
         /// <summary>
@@ -51,7 +50,7 @@ namespace TPGrafos.Classes
         /// </summary>
         /// <param name="caminho">o arquivo que o usuário informa</param>
         /// <returns>Retorna um grafo</returns>
-        protected  Grafo GeraGrafo(Stream caminho)
+        protected static Grafo GeraGrafo(Stream caminho)
         {
             Grafo g;
             ListaVertice vertices = new ListaVertice();
@@ -62,9 +61,46 @@ namespace TPGrafos.Classes
             string[] linhasArquivo = arquivo.Replace("\r", "").Split('\n');//Vetor com as linhas do arquivo (utilizada no for para gerar o grafo)
 
             //é orientado
-            if (this.IsDigrafo(arquivo))
+            if (IsDigrafo(arquivo))
             {
-                //teste de retorno
+                g = new GDirigido();
+
+                vertices.GerarLista(int.Parse(infoGrafo[0]));
+
+                for (int i = 1; i < infoGrafo.Length; i = i + 4)
+                {
+                    //Lista de arestas
+
+                    Aresta auxA;
+
+                    if (int.Parse(infoGrafo[i]) == 1) //Se a aresta tem direção 1, cria a aresta com origem e destino na sequencia informada
+                    {
+                        auxA = new Aresta(new Vertice(int.Parse(infoGrafo[i])), new Vertice(int.Parse(infoGrafo[i + 1])), int.Parse(infoGrafo[i + 2]));
+                    }
+                    else //se não, cria a aresta com origem e destino na direção inversa
+                    {
+                        auxA = new Aresta(new Vertice(int.Parse(infoGrafo[i+1])), new Vertice(int.Parse(infoGrafo[i])), int.Parse(infoGrafo[i + 2]));
+                        arestas.Adicionar(auxA);
+                    }
+                    
+
+                    if (vertices.Buscar(auxA.Origem) == null)
+                    {
+                        vertices.Adicionar(auxA.Origem);
+                        vertices.BuscarAdicionarOrigem(auxA);
+                    }
+                    else
+                    { vertices.BuscarVertice(auxA.Origem).Arestas.Adicionar(auxA); }
+
+                    if (vertices.Buscar(auxA.Destino) == null)
+                    {
+                        vertices.Adicionar(auxA.Destino);
+                        vertices.BuscarAdicionarDestino(auxA);
+                    }
+                    else
+                    { vertices.BuscarVertice(auxA.Destino).Arestas.Adicionar(auxA); }
+                }
+                
                 return g = new GDirigido(vertices, arestas);
             }
             else //Não é orientado
@@ -99,13 +135,13 @@ namespace TPGrafos.Classes
             }
         }
 
-        public ListaVertice Vertice
+        public ListaVertice Vertices
         {
             get { return this.vertices; }
             set { this.vertices = value; }
         }
 
-        public ListaAresta Aresta
+        public ListaAresta Arestas
         {
             get { return this.arestas; }
             set { this.arestas = value; }
