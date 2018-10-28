@@ -12,6 +12,7 @@ namespace TPGrafos.Classes
     {
         protected ListaVertice vertices;
         protected ListaAresta arestas;
+        public bool digrafo;
 
         public Grafo()
         {}
@@ -34,15 +35,15 @@ namespace TPGrafos.Classes
         /// True: É orientado 
         /// False: não é orientado
         /// </returns>
-        private static bool IsDigrafo(string arquivo)
+        private bool IsDigrafo(string arquivo)
         {
             string[] linhas = arquivo.Replace("\r", "").Split('\n');
             if(linhas.Length == 1)
-            { return false; }
+            { return this.digrafo = false; }
             linhas = linhas[1].Replace("\r", "").Split('\n', ';');
 
-            if (linhas.Length == 3) { return false; }
-            else { return true; }
+            if (linhas.Length == 3) { return this.digrafo = false; }
+            else { return this.digrafo = true; }
         }
 
         /// <summary>
@@ -50,7 +51,7 @@ namespace TPGrafos.Classes
         /// </summary>
         /// <param name="caminho">o arquivo que o usuário informa</param>
         /// <returns>Retorna um grafo</returns>
-        protected static Grafo GeraGrafo(Stream caminho)
+        protected  Grafo GeraGrafo(Stream caminho)
         {
             Grafo g;
             ListaVertice vertices = new ListaVertice();
@@ -61,10 +62,10 @@ namespace TPGrafos.Classes
             string[] linhasArquivo = arquivo.Replace("\r", "").Split('\n');//Vetor com as linhas do arquivo (utilizada no for para gerar o grafo)
 
             //é orientado
-            if (IsDigrafo(arquivo))
+            if (this.IsDigrafo(arquivo))
             {
                 //teste de retorno
-                return g = new Grafo(vertices, arestas);
+                return g = new GDirigido(vertices, arestas);
             }
             else //Não é orientado
             {

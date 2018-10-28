@@ -18,6 +18,7 @@ namespace TPGrafos
         public Menu()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void AbirArquivo_Click(object sender, EventArgs e)
@@ -27,9 +28,11 @@ namespace TPGrafos
 
             if (biblioteca.ShowDialog() == DialogResult.OK)
             {
-                GNaoDirigido grafo = new GNaoDirigido();
-                    grafo = (GNaoDirigido)grafo.GetGrafo(biblioteca.OpenFile());
-                grafo.IsAdjacente(new Vertice(1) ,new Vertice(3));
+                Grafo g = new Grafo();
+                if (g.digrafo) { }
+
+                //    grafo = (GNaoDirigido)grafo.GetGrafo(biblioteca.OpenFile());
+                //grafo.IsAdjacente(new Vertice(1) ,new Vertice(3));
             }
             MessageBox.Show("show");
         }
