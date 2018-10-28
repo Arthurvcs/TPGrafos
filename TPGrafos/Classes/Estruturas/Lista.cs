@@ -8,7 +8,7 @@ namespace TPGrafos.Classes.Estruturas
 {
     class Lista
     {
-        protected Elemento pri, ult;
+        public Elemento pri, ult;
 
         public Lista()
         {

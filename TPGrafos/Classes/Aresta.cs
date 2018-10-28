@@ -40,7 +40,13 @@ namespace TPGrafos.Classes
 
         public bool Equals(IDados other)
         {
-            throw new NotImplementedException();
+            Vertice aux = (Vertice)other;
+            if (this.Origem.Nome == aux.Nome || this.Destino.Nome == aux.Nome)
+            {
+                return true;
+            }
+            else
+                return false;
         }
     }
 }

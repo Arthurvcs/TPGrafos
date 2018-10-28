@@ -37,6 +37,8 @@ namespace TPGrafos.Classes
         private static bool IsDigrafo(string arquivo)
         {
             string[] linhas = arquivo.Replace("\r", "").Split('\n');
+            if(linhas.Length == 1)
+            { return false; }
             linhas = linhas[1].Replace("\r", "").Split('\n', ';');
 
             if (linhas.Length == 3) { return false; }
