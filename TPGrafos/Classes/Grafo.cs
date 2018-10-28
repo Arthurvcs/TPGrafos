@@ -63,8 +63,45 @@ namespace TPGrafos.Classes
             //é orientado
             if (IsDigrafo(arquivo))
             {
-                //teste de retorno
-                return g = new Grafo(vertices, arestas);
+                g = new GDirigido();
+
+                vertices.GerarLista(int.Parse(infoGrafo[0]));
+
+                for (int i = 1; i < infoGrafo.Length; i = i + 4)
+                {
+                    //Lista de arestas
+
+                    Aresta auxA;
+
+                    if (int.Parse(infoGrafo[i]) == 1) //Se a aresta tem direção 1, cria a aresta com origem e destino na sequencia informada
+                    {
+                        auxA = new Aresta(new Vertice(int.Parse(infoGrafo[i])), new Vertice(int.Parse(infoGrafo[i + 1])), int.Parse(infoGrafo[i + 2]));
+                    }
+                    else //se não, cria a aresta com origem e destino na direção inversa
+                    {
+                        auxA = new Aresta(new Vertice(int.Parse(infoGrafo[i+1])), new Vertice(int.Parse(infoGrafo[i])), int.Parse(infoGrafo[i + 2]));
+                        arestas.Adicionar(auxA);
+                    }
+                    
+
+                    if (vertices.Buscar(auxA.Origem) == null)
+                    {
+                        vertices.Adicionar(auxA.Origem);
+                        vertices.BuscarAdicionarOrigem(auxA);
+                    }
+                    else
+                    { vertices.BuscarVertice(auxA.Origem).Arestas.Adicionar(auxA); }
+
+                    if (vertices.Buscar(auxA.Destino) == null)
+                    {
+                        vertices.Adicionar(auxA.Destino);
+                        vertices.BuscarAdicionarDestino(auxA);
+                    }
+                    else
+                    { vertices.BuscarVertice(auxA.Destino).Arestas.Adicionar(auxA); }
+                }
+                
+                return g = new GDirigido(vertices, arestas);
             }
             else //Não é orientado
             {
@@ -98,13 +135,13 @@ namespace TPGrafos.Classes
             }
         }
 
-        public ListaVertice Vertice
+        public ListaVertice Vertices
         {
             get { return this.vertices; }
             set { this.vertices = value; }
         }
 
-        public ListaAresta Aresta
+        public ListaAresta Arestas
         {
             get { return this.arestas; }
             set { this.arestas = value; }
