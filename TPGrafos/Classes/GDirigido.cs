@@ -112,15 +112,21 @@ namespace TPGrafos.Classes
                 if (GetGrauEntrada(auxVx) != 1) //se o grau de entrada não for 1, significa que não existe um ciclo, pois não existe aresta chegando ao vertice ou existem mais de uma aresta chegando ao vertice
                 {
                     fimBusca = 1; //indica que a busca pelo ciclo terminou
+                    break;
                 }
                 else if (GetGrauSaida(auxVx) != 1) //se o grau de saida não for 1, significa que não existe um ciclo, pois não existe aresta saindo do vertice ou existem mais de uma aresta saindo do vertice
                 {
                     fimBusca = 1; //indica que a busca pelo ciclo terminou
+                    break;
                 }
 
-                Aresta auxA = (Aresta)auxVx.Arestas.pri.Dados;
+                Elemento AuxAr = auxVx.Arestas.pri.Prox;
+                Aresta auxA = (Aresta)AuxAr.Dados;
 
-                //if(auxA)
+                if (auxA.Origem.Equals(auxVx))
+                {
+
+                }
             }
 
             return true;

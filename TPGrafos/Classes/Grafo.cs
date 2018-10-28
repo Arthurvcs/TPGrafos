@@ -12,7 +12,7 @@ namespace TPGrafos.Classes
     {
         protected ListaVertice vertices;
         protected ListaAresta arestas;
-        public bool digrafo { get { return this.digrafo; } set { this.digrafo = value; } }
+        public bool digrafo;
 
         public Grafo()
         {}
@@ -35,15 +35,15 @@ namespace TPGrafos.Classes
         /// True: É orientado 
         /// False: não é orientado
         /// </returns>
-        private bool IsDigrafo(string arquivo)
+        private void IsDigrafo(string arquivo)
         {
             string[] linhas = arquivo.Replace("\r", "").Split('\n');
             if(linhas.Length == 1)
-            { return this.digrafo = false; }
+            { this.digrafo = false; }
             linhas = linhas[1].Replace("\r", "").Split('\n', ';');
 
-            if (linhas.Length == 3) { return this.digrafo  =false; }
-            else { return this.digrafo = true; }
+            if (linhas.Length == 3) { this.digrafo  =false; }
+            else { this.digrafo = true; }
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace TPGrafos.Classes
             string[] linhasArquivo = arquivo.Replace("\r", "").Split('\n');//Vetor com as linhas do arquivo (utilizada no for para gerar o grafo)
 
             //é orientado
-            if (IsDigrafo(arquivo))
+            if (digrafo)
             {
                 g = new GDirigido();
 
