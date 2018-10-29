@@ -50,6 +50,42 @@ namespace TPGrafos
 
         public GDirigido grafo { get { return this.g; } set { this.g = value; } }
 
+        private void geral_btn_Click(object sender, EventArgs e)
+        {
+            if (metodo == "GETGRAUENTRADA")
+            {
+                Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
+                MessageBox.Show("O vértice " + vertices_listBox.SelectedItem.ToString() + " possui grau de entrada: " + g.GetGrauEntrada(aux).ToString(), this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            if (metodo == "GETGRAUSAIDA")
+            {
+                Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
+                MessageBox.Show("O vértice " + vertices_listBox.SelectedItem.ToString() + " possui grau de saída: " + g.GetGrauSaida(aux).ToString(), this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
+
+        private void GetGrauEntrada_btn_Click(object sender, EventArgs e)
+        {
+            this.metodo = "GETGRAUENTRADA";
+            metodo_label.Visible = false;
+            vertices_listBox.Visible = true;
+            selecione_label.Visible = true;
+            this.geral_btn.Visible = true;
+            this.geral_btn.Text = "Verificar o grau";
+            selecione_label.Text = "Selecione o vértice desejado";
+        }
+
+        private void GetGrauSaida_btn_Click(object sender, EventArgs e)
+        {
+            this.metodo = "GETGRAUSAIDA";
+            metodo_label.Visible = false;
+            vertices_listBox.Visible = true;
+            selecione_label.Visible = true;
+            this.geral_btn.Visible = true;
+            this.geral_btn.Text = "Verificar o grau";
+            selecione_label.Text = "Selecione o vértice desejado";
+        }
+
         private void HasCiclo_btn_Click(object sender, EventArgs e)
         {
             this.metodo = "HASCICLO";
@@ -68,24 +104,13 @@ namespace TPGrafos
             this.metodo_label.Visible = true;
         }
 
-        private void GetGrauEntrada_btn_Click(object sender, EventArgs e)
+        private void retorna_btn_Click(object sender, EventArgs e)
         {
-            this.metodo = "GETGRAUENTRADA";
-            metodo_label.Visible = false;
-            vertices_listBox.Visible = true;
-            selecione_label.Visible = true;
-            this.geral_btn.Visible = true;
-            this.geral_btn.Text = "Verificar o grau";
-            selecione_label.Text = "Selecione o vértice desejado";
-        }
-
-        private void geral_btn_Click(object sender, EventArgs e)
-        {
-            if (metodo == "GETGRAUENTRADA")
-            {
-                Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
-                MessageBox.Show("O vértice " + vertices_listBox.SelectedItem.ToString() + " possui grau de entrada: " + g.GetGrauEntrada(aux).ToString(), this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
+            Menu main = new Menu();
+            this.Hide();
+            main.ShowDialog();
+            this.Close();
         }
     }
 }
+

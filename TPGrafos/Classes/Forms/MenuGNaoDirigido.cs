@@ -170,5 +170,13 @@ namespace TPGrafos
             this.metodo_label.Visible = true;
 
         }
+
+        private void retona_btn_Click(object sender, EventArgs e)
+        {
+            Menu main = new Menu();
+            this.Hide();
+            main.ShowDialog();
+            this.Close();
+        }
     }
 }

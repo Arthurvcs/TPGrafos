@@ -74,6 +74,7 @@
             resources.ApplyResources(this.GetGrauSaida_btn, "GetGrauSaida_btn");
             this.GetGrauSaida_btn.Name = "GetGrauSaida_btn";
             this.GetGrauSaida_btn.UseVisualStyleBackColor = false;
+            this.GetGrauSaida_btn.Click += new System.EventHandler(this.GetGrauSaida_btn_Click);
             // 
             // GetGrauEntrada_btn
             // 
@@ -86,8 +87,8 @@
             // 
             // vertices_listBox
             // 
-            this.vertices_listBox.FormattingEnabled = true;
             resources.ApplyResources(this.vertices_listBox, "vertices_listBox");
+            this.vertices_listBox.FormattingEnabled = true;
             this.vertices_listBox.Name = "vertices_listBox";
             // 
             // label2
@@ -106,6 +107,7 @@
             this.retorna_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.retorna_btn.Name = "retorna_btn";
             this.retorna_btn.UseVisualStyleBackColor = false;
+            this.retorna_btn.Click += new System.EventHandler(this.retorna_btn_Click);
             // 
             // quant_arestas_label
             // 

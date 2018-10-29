@@ -398,6 +398,7 @@
             this.retona_btn.Size = new System.Drawing.Size(42, 33);
             this.retona_btn.TabIndex = 40;
             this.retona_btn.UseVisualStyleBackColor = false;
+            this.retona_btn.Click += new System.EventHandler(this.retona_btn_Click);
             // 
             // label2
             // 
