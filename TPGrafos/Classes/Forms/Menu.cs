@@ -31,9 +31,8 @@ namespace TPGrafos
                 Grafo g = new Grafo();
                 g = g.GetGrafo(biblioteca.OpenFile());
 
-                if (g.digrafo == false)
+                if (!g.digrafo)
                 {
-
                     g = (GNaoDirigido)g.GetGrafo(biblioteca.OpenFile());
                     
                     MenuGNaoDirigido MenuGNaoDirigido = new MenuGNaoDirigido((GNaoDirigido)g, biblioteca.FileName);

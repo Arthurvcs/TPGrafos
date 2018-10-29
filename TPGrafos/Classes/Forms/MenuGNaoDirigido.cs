@@ -103,45 +103,25 @@ namespace TPGrafos
         private void Get_Grau_Click(object sender, EventArgs e)
         {
             this.metodo = "GETGRAU";
-            metodo_label.Visible = false;
-            vertices_listBox.Visible = true;
-            selecione_label.Visible = true;
-            this.geral_btn.Visible = true;
-            this.geral_btn.Text = "Verificar o grau";
-            selecione_label.Text = "Selecione o vértice desejado";
+            HabilitarVizualizacao();
         }
 
         private void Is_isolado_Click(object sender, EventArgs e)
         {
             this.metodo = "ISISOLADO";
-            metodo_label.Visible = false;
-            vertices_listBox.Visible = true;
-            selecione_label.Visible = true;
-            this.geral_btn.Visible = true;
-            this.geral_btn.Text = "Verificar o grau";
-            selecione_label.Text = "Selecione o vértice desejado";
+            HabilitarVizualizacao();
         }
 
         private void IsPendente_Click(object sender, EventArgs e)
         {
             this.metodo = "ISPENDENTE";
-            metodo_label.Visible = false;
-            vertices_listBox.Visible = true;
-            selecione_label.Visible = true;
-            this.geral_btn.Visible = true;
-            this.geral_btn.Text = "Verificar o grau";
-            selecione_label.Text = "Selecione o vértice desejado";
+            HabilitarVizualizacao();
         }
 
         private void IsRegular_Click(object sender, EventArgs e)
         {
             this.metodo = "ISREGULAR";
-            metodo_label.Visible = false;
-            vertices_listBox.Visible = false;
-            selecione_label.Visible = false;
-            this.geral_btn.Visible = false;
-            this.geral_btn.Text = "";
-            selecione_label.Text = "";
+            DesabilitarVizualizacao();
 
             Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
             if (g.IsRegular())
@@ -151,16 +131,15 @@ namespace TPGrafos
             this.metodo_label.Visible = true;
 
         }
-
+        /// <summary>
+        /// Configuração do botão para 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void IsNulo_Click(object sender, EventArgs e)
         {
             this.metodo = "ISNULO";
-            metodo_label.Visible = false;
-            vertices_listBox.Visible = false;
-            selecione_label.Visible = false;
-            this.geral_btn.Visible = false;
-            this.geral_btn.Text = "";
-            selecione_label.Text = "";
+            HabilitarVizualizacao();
 
             Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
             if (g.IsNulo())
@@ -168,9 +147,38 @@ namespace TPGrafos
             else
             { MessageBox.Show("O grafo não é nulo.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Warning); }
             this.metodo_label.Visible = true;
-
         }
 
+        /// <summary>
+        /// Método responsável para habilitar a vizualização dos campos do form atual
+        /// </summary>
+        private void HabilitarVizualizacao()
+        {
+            metodo_label.Visible = false;
+            vertices_listBox.Visible = true;
+            selecione_label.Visible = true;
+            this.geral_btn.Visible = true;
+            this.geral_btn.Text = "Verificar o grau";
+            selecione_label.Text = "Selecione o vértice desejado";
+        }
+        /// <summary>
+        /// Método responsável para limpar o form atual
+        /// </summary>
+        private void DesabilitarVizualizacao()
+        {
+            vertices_listBox.Visible = false;
+            selecione_label.Visible = false;
+            metodo_label.Visible = false;
+            this.geral_btn.Visible = false;
+            this.geral_btn.Text = "Verificar o grau";
+            this.metodo = "";
+            this.metodo_label.Visible = true;
+        }
+        /// <summary>
+        /// Configuração do botão para retornar para tela inicial
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void retona_btn_Click(object sender, EventArgs e)
         {
             Menu main = new Menu();
