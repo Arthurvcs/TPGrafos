@@ -118,118 +118,118 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button3.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="HasCiclo_btn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei, 8.25pt</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="button3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="HasCiclo_btn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="HasCiclo_btn.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 92</value>
   </data>
-  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="HasCiclo_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 33</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="button3.TabIndex" type="System.Int32, mscorlib">
+  <data name="HasCiclo_btn.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="button3.Text" xml:space="preserve">
+  <data name="HasCiclo_btn.Text" xml:space="preserve">
     <value>HasCiclo</value>
   </data>
-  <data name="&gt;&gt;button3.Name" xml:space="preserve">
-    <value>button3</value>
+  <data name="&gt;&gt;HasCiclo_btn.Name" xml:space="preserve">
+    <value>HasCiclo_btn</value>
   </data>
-  <data name="&gt;&gt;button3.Type" xml:space="preserve">
+  <data name="&gt;&gt;HasCiclo_btn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;HasCiclo_btn.Parent" xml:space="preserve">
+    <value>MainPanel</value>
   </data>
-  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;HasCiclo_btn.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="button2.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="GetGrauSaida_btn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei, 8.25pt</value>
   </data>
-  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="GetGrauSaida_btn.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 53</value>
   </data>
-  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="GetGrauSaida_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 33</value>
   </data>
-  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+  <data name="GetGrauSaida_btn.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="button2.Text" xml:space="preserve">
+  <data name="GetGrauSaida_btn.Text" xml:space="preserve">
     <value>GetGrauSaida</value>
   </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
+  <data name="&gt;&gt;GetGrauSaida_btn.Name" xml:space="preserve">
+    <value>GetGrauSaida_btn</value>
   </data>
-  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+  <data name="&gt;&gt;GetGrauSaida_btn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;GetGrauSaida_btn.Parent" xml:space="preserve">
+    <value>MainPanel</value>
   </data>
-  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;GetGrauSaida_btn.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="GetGrauEntrada_btn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei, 8.25pt</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="GetGrauEntrada_btn.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 14</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="GetGrauEntrada_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 33</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+  <data name="GetGrauEntrada_btn.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
+  <data name="GetGrauEntrada_btn.Text" xml:space="preserve">
     <value>GetGrauEntrada</value>
   </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
+  <data name="&gt;&gt;GetGrauEntrada_btn.Name" xml:space="preserve">
+    <value>GetGrauEntrada_btn</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+  <data name="&gt;&gt;GetGrauEntrada_btn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;GetGrauEntrada_btn.Parent" xml:space="preserve">
+    <value>MainPanel</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;GetGrauEntrada_btn.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>689, 13</value>
+  <data name="MainPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>696, 2</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="MainPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 139</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+  <data name="MainPanel.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;MainPanel.Name" xml:space="preserve">
+    <value>MainPanel</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;MainPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;MainPanel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;MainPanel.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="listBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 114</value>
+    <value>272, 154</value>
   </data>
   <data name="listBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 407</value>
+    <value>202, 277</value>
   </data>
   <data name="listBox1.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -244,7 +244,381 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;listBox1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Bahnschrift Light Condensed, 15.75pt</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 20</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 25</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Clique para retornar ao menu principal</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="retorna_btn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAABGdBTUEAALGPC/xhBQAAAetJREFUeF7t
+        011Kw2AURdEOQ0ehgsPzb8CKQ9Cv0IAPIrZNIMleC+7LfT77AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAC79XY6yDkO/+t0IiDl5/hFQMpv459OBOzaX+OfTgTs0n/GP50I2JVzxj+dCNiFS8Y/
+        nQjYtGvGP50I2KQ5xj+dCNiUOcc/nQjYhCXGf7yPcTfjYLWWHP/DOFgt4yfL+MkyfrKMnyzjJ8v4yTJ+
+        soyfrCXHfz8OVsv4yTJ+soyfLOMny/jJMn6yjJ+spcb/Ps74WTXjJ8v4yTJ+soyfLOMny/jJMn6yjJ+s
+        Jcd/Nw5Wy/jJMn6yjJ8s4yfL+MkyfrKMnyzjJ8v4SVsqgM9xj+Ng9URAngjIEwF5IiBPBOSJgDwRkCcC
+        8kRAngjIEwF5IiBPBOSJgDwRkCcC8kRAngjIEwF5IiBPBOSJgDwRkCcC8kRAngjIEwF5IiBPBOSJgDwR
+        kCcC8kRAngjIEwF5S0ZwOw5Wb4kInsbBZswZgfGzSXNEYPxs2jURPI+DzbskAuNnV86JwPjZpf9E8DIO
+        duuvCIyfhN8iMH5SfkbwenxAzTEC4wcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADg
+        aofDN14HdVjFi4FYAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="retorna_btn.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="retorna_btn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="retorna_btn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 16</value>
+  </data>
+  <data name="retorna_btn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 33</value>
+  </data>
+  <data name="retorna_btn.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="&gt;&gt;retorna_btn.Name" xml:space="preserve">
+    <value>retorna_btn</value>
+  </data>
+  <data name="&gt;&gt;retorna_btn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;retorna_btn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;retorna_btn.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="quant_arestas_label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="quant_arestas_label.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Bahnschrift Light Condensed, 15.75pt</value>
+  </data>
+  <data name="quant_arestas_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 150</value>
+  </data>
+  <data name="quant_arestas_label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 25</value>
+  </data>
+  <data name="quant_arestas_label.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="quant_arestas_label.Text" xml:space="preserve">
+    <value>QuantAres</value>
+  </data>
+  <data name="&gt;&gt;quant_arestas_label.Name" xml:space="preserve">
+    <value>quant_arestas_label</value>
+  </data>
+  <data name="&gt;&gt;quant_arestas_label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;quant_arestas_label.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;quant_arestas_label.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Bahnschrift Light Condensed, 15.75pt</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 150</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 25</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Arestas :</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="quant_vertices_label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="quant_vertices_label.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Bahnschrift Light Condensed, 15.75pt</value>
+  </data>
+  <data name="quant_vertices_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 120</value>
+  </data>
+  <data name="quant_vertices_label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 25</value>
+  </data>
+  <data name="quant_vertices_label.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="quant_vertices_label.Text" xml:space="preserve">
+    <value>Qantvert</value>
+  </data>
+  <data name="&gt;&gt;quant_vertices_label.Name" xml:space="preserve">
+    <value>quant_vertices_label</value>
+  </data>
+  <data name="&gt;&gt;quant_vertices_label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;quant_vertices_label.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;quant_vertices_label.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Bahnschrift Light Condensed, 15.75pt</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 120</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 25</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Vertíces : </value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="tipo_grafo_label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tipo_grafo_label.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Bahnschrift Light Condensed, 15.75pt</value>
+  </data>
+  <data name="tipo_grafo_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 88</value>
+  </data>
+  <data name="tipo_grafo_label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 25</value>
+  </data>
+  <data name="tipo_grafo_label.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="tipo_grafo_label.Text" xml:space="preserve">
+    <value>tipografo</value>
+  </data>
+  <data name="&gt;&gt;tipo_grafo_label.Name" xml:space="preserve">
+    <value>tipo_grafo_label</value>
+  </data>
+  <data name="&gt;&gt;tipo_grafo_label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tipo_grafo_label.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tipo_grafo_label.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Bahnschrift Light Condensed, 15.75pt</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 88</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 25</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Grafo:</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="selecione_label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="selecione_label.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Bahnschrift Light Condensed, 15.75pt</value>
+  </data>
+  <data name="selecione_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>292, 126</value>
+  </data>
+  <data name="selecione_label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 25</value>
+  </data>
+  <data name="selecione_label.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="selecione_label.Text" xml:space="preserve">
+    <value>Selecione um vétice</value>
+  </data>
+  <data name="selecione_label.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;selecione_label.Name" xml:space="preserve">
+    <value>selecione_label</value>
+  </data>
+  <data name="&gt;&gt;selecione_label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;selecione_label.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;selecione_label.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="metodo_label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="metodo_label.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Bahnschrift Light Condensed, 15.75pt</value>
+  </data>
+  <data name="metodo_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 275</value>
+  </data>
+  <data name="metodo_label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 25</value>
+  </data>
+  <data name="metodo_label.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="metodo_label.Text" xml:space="preserve">
+    <value>Selecione um método</value>
+  </data>
+  <data name="&gt;&gt;metodo_label.Name" xml:space="preserve">
+    <value>metodo_label</value>
+  </data>
+  <data name="&gt;&gt;metodo_label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;metodo_label.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metodo_label.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="endereco_label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="endereco_label.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Bahnschrift Light Condensed, 13pt</value>
+  </data>
+  <data name="endereco_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 521</value>
+  </data>
+  <data name="endereco_label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 22</value>
+  </data>
+  <data name="endereco_label.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="endereco_label.Text" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;endereco_label.Name" xml:space="preserve">
+    <value>endereco_label</value>
+  </data>
+  <data name="&gt;&gt;endereco_label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;endereco_label.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;endereco_label.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Bahnschrift Light Condensed, 15.75pt</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 494</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 25</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Endereço do arquivo :</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

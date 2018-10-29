@@ -29,264 +29,264 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuGNaoDirigido));
-            this.IsAdjacente = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.IsNulo = new System.Windows.Forms.Button();
-            this.IsRegular = new System.Windows.Forms.Button();
-            this.IsPendente = new System.Windows.Forms.Button();
-            this.Is_isolado = new System.Windows.Forms.Button();
-            this.Get_Grau = new System.Windows.Forms.Button();
-            this.List_vertices = new System.Windows.Forms.ListBox();
+            this.IsAdjacente_btn = new System.Windows.Forms.Button();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.GetCut_Vertices_btn = new System.Windows.Forms.Button();
+            this.GetAGMKruskal_btn = new System.Windows.Forms.Button();
+            this.GetAGMPrim_btn = new System.Windows.Forms.Button();
+            this.GetComplementar_btn = new System.Windows.Forms.Button();
+            this.IsUnicursal_btn = new System.Windows.Forms.Button();
+            this.IsEuleriano_btn = new System.Windows.Forms.Button();
+            this.IsConexo_btn = new System.Windows.Forms.Button();
+            this.IsCompleto_btn = new System.Windows.Forms.Button();
+            this.IsNulo_btn = new System.Windows.Forms.Button();
+            this.IsRegular_btn = new System.Windows.Forms.Button();
+            this.IsPendente_btn = new System.Windows.Forms.Button();
+            this.Is_isolado_btn = new System.Windows.Forms.Button();
+            this.Get_Grau_btn = new System.Windows.Forms.Button();
+            this.vertices_listBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.endereco = new System.Windows.Forms.Label();
+            this.endereco_label = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tipo_grafo = new System.Windows.Forms.Label();
+            this.tipo_grafo_label = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.quant_vertices = new System.Windows.Forms.Label();
+            this.quant_vertices_label = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.quant_arestas = new System.Windows.Forms.Label();
+            this.quant_arestas_label = new System.Windows.Forms.Label();
             this.selecione_label = new System.Windows.Forms.Label();
             this.metodo_label = new System.Windows.Forms.Label();
-            this.btn_geral = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.geral_btn = new System.Windows.Forms.Button();
+            this.retona_btn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // IsAdjacente
+            // IsAdjacente_btn
             // 
-            this.IsAdjacente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.IsAdjacente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.IsAdjacente.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.IsAdjacente.Location = new System.Drawing.Point(14, 14);
-            this.IsAdjacente.Name = "IsAdjacente";
-            this.IsAdjacente.Size = new System.Drawing.Size(116, 33);
-            this.IsAdjacente.TabIndex = 13;
-            this.IsAdjacente.Text = "IsAdjacente";
-            this.IsAdjacente.UseVisualStyleBackColor = false;
-            this.IsAdjacente.Click += new System.EventHandler(this.IsAdjacente_Click);
+            this.IsAdjacente_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IsAdjacente_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.IsAdjacente_btn.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.IsAdjacente_btn.Location = new System.Drawing.Point(14, 14);
+            this.IsAdjacente_btn.Name = "IsAdjacente_btn";
+            this.IsAdjacente_btn.Size = new System.Drawing.Size(116, 33);
+            this.IsAdjacente_btn.TabIndex = 13;
+            this.IsAdjacente_btn.Text = "IsAdjacente";
+            this.IsAdjacente_btn.UseVisualStyleBackColor = false;
+            this.IsAdjacente_btn.Click += new System.EventHandler(this.IsAdjacente_Click);
             // 
-            // panel1
+            // MainPanel
             // 
-            this.panel1.Controls.Add(this.button14);
-            this.panel1.Controls.Add(this.button13);
-            this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.IsNulo);
-            this.panel1.Controls.Add(this.IsRegular);
-            this.panel1.Controls.Add(this.IsPendente);
-            this.panel1.Controls.Add(this.Is_isolado);
-            this.panel1.Controls.Add(this.Get_Grau);
-            this.panel1.Controls.Add(this.IsAdjacente);
-            this.panel1.Location = new System.Drawing.Point(696, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(138, 566);
-            this.panel1.TabIndex = 12;
+            this.MainPanel.Controls.Add(this.GetCut_Vertices_btn);
+            this.MainPanel.Controls.Add(this.GetAGMKruskal_btn);
+            this.MainPanel.Controls.Add(this.GetAGMPrim_btn);
+            this.MainPanel.Controls.Add(this.GetComplementar_btn);
+            this.MainPanel.Controls.Add(this.IsUnicursal_btn);
+            this.MainPanel.Controls.Add(this.IsEuleriano_btn);
+            this.MainPanel.Controls.Add(this.IsConexo_btn);
+            this.MainPanel.Controls.Add(this.IsCompleto_btn);
+            this.MainPanel.Controls.Add(this.IsNulo_btn);
+            this.MainPanel.Controls.Add(this.IsRegular_btn);
+            this.MainPanel.Controls.Add(this.IsPendente_btn);
+            this.MainPanel.Controls.Add(this.Is_isolado_btn);
+            this.MainPanel.Controls.Add(this.Get_Grau_btn);
+            this.MainPanel.Controls.Add(this.IsAdjacente_btn);
+            this.MainPanel.Location = new System.Drawing.Point(696, 2);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(138, 566);
+            this.MainPanel.TabIndex = 12;
             // 
-            // button14
+            // GetCut_Vertices_btn
             // 
-            this.button14.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button14.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.button14.Location = new System.Drawing.Point(14, 520);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(116, 33);
-            this.button14.TabIndex = 26;
-            this.button14.Text = "GetCutVertices";
-            this.button14.UseVisualStyleBackColor = false;
+            this.GetCut_Vertices_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.GetCut_Vertices_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.GetCut_Vertices_btn.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.GetCut_Vertices_btn.Location = new System.Drawing.Point(14, 520);
+            this.GetCut_Vertices_btn.Name = "GetCut_Vertices_btn";
+            this.GetCut_Vertices_btn.Size = new System.Drawing.Size(116, 33);
+            this.GetCut_Vertices_btn.TabIndex = 26;
+            this.GetCut_Vertices_btn.Text = "GetCutVertices";
+            this.GetCut_Vertices_btn.UseVisualStyleBackColor = false;
             // 
-            // button13
+            // GetAGMKruskal_btn
             // 
-            this.button13.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button13.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.button13.Location = new System.Drawing.Point(14, 481);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(116, 33);
-            this.button13.TabIndex = 25;
-            this.button13.Text = "GetAGMKruskal";
-            this.button13.UseVisualStyleBackColor = false;
+            this.GetAGMKruskal_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.GetAGMKruskal_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.GetAGMKruskal_btn.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.GetAGMKruskal_btn.Location = new System.Drawing.Point(14, 481);
+            this.GetAGMKruskal_btn.Name = "GetAGMKruskal_btn";
+            this.GetAGMKruskal_btn.Size = new System.Drawing.Size(116, 33);
+            this.GetAGMKruskal_btn.TabIndex = 25;
+            this.GetAGMKruskal_btn.Text = "GetAGMKruskal";
+            this.GetAGMKruskal_btn.UseVisualStyleBackColor = false;
             // 
-            // button12
+            // GetAGMPrim_btn
             // 
-            this.button12.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button12.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.button12.Location = new System.Drawing.Point(14, 442);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(116, 33);
-            this.button12.TabIndex = 24;
-            this.button12.Text = "GetAGMPrim";
-            this.button12.UseVisualStyleBackColor = false;
+            this.GetAGMPrim_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.GetAGMPrim_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.GetAGMPrim_btn.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.GetAGMPrim_btn.Location = new System.Drawing.Point(14, 442);
+            this.GetAGMPrim_btn.Name = "GetAGMPrim_btn";
+            this.GetAGMPrim_btn.Size = new System.Drawing.Size(116, 33);
+            this.GetAGMPrim_btn.TabIndex = 24;
+            this.GetAGMPrim_btn.Text = "GetAGMPrim";
+            this.GetAGMPrim_btn.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // GetComplementar_btn
             // 
-            this.button11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button11.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.button11.Location = new System.Drawing.Point(14, 403);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(116, 33);
-            this.button11.TabIndex = 23;
-            this.button11.Text = "GetComplementar";
-            this.button11.UseVisualStyleBackColor = false;
+            this.GetComplementar_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.GetComplementar_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.GetComplementar_btn.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.GetComplementar_btn.Location = new System.Drawing.Point(14, 403);
+            this.GetComplementar_btn.Name = "GetComplementar_btn";
+            this.GetComplementar_btn.Size = new System.Drawing.Size(116, 33);
+            this.GetComplementar_btn.TabIndex = 23;
+            this.GetComplementar_btn.Text = "GetComplementar";
+            this.GetComplementar_btn.UseVisualStyleBackColor = false;
             // 
-            // button10
+            // IsUnicursal_btn
             // 
-            this.button10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button10.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.button10.Location = new System.Drawing.Point(14, 364);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(116, 33);
-            this.button10.TabIndex = 22;
-            this.button10.Text = "IsUnicursal";
-            this.button10.UseVisualStyleBackColor = false;
+            this.IsUnicursal_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IsUnicursal_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.IsUnicursal_btn.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.IsUnicursal_btn.Location = new System.Drawing.Point(14, 364);
+            this.IsUnicursal_btn.Name = "IsUnicursal_btn";
+            this.IsUnicursal_btn.Size = new System.Drawing.Size(116, 33);
+            this.IsUnicursal_btn.TabIndex = 22;
+            this.IsUnicursal_btn.Text = "IsUnicursal";
+            this.IsUnicursal_btn.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // IsEuleriano_btn
             // 
-            this.button9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button9.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.button9.Location = new System.Drawing.Point(14, 326);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(116, 33);
-            this.button9.TabIndex = 21;
-            this.button9.Text = "IsEuleriano";
-            this.button9.UseVisualStyleBackColor = false;
+            this.IsEuleriano_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IsEuleriano_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.IsEuleriano_btn.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.IsEuleriano_btn.Location = new System.Drawing.Point(14, 326);
+            this.IsEuleriano_btn.Name = "IsEuleriano_btn";
+            this.IsEuleriano_btn.Size = new System.Drawing.Size(116, 33);
+            this.IsEuleriano_btn.TabIndex = 21;
+            this.IsEuleriano_btn.Text = "IsEuleriano";
+            this.IsEuleriano_btn.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // IsConexo_btn
             // 
-            this.button8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button8.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.button8.Location = new System.Drawing.Point(14, 287);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(116, 33);
-            this.button8.TabIndex = 20;
-            this.button8.Text = "IsConexo";
-            this.button8.UseVisualStyleBackColor = false;
+            this.IsConexo_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IsConexo_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.IsConexo_btn.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.IsConexo_btn.Location = new System.Drawing.Point(14, 287);
+            this.IsConexo_btn.Name = "IsConexo_btn";
+            this.IsConexo_btn.Size = new System.Drawing.Size(116, 33);
+            this.IsConexo_btn.TabIndex = 20;
+            this.IsConexo_btn.Text = "IsConexo";
+            this.IsConexo_btn.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // IsCompleto_btn
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button7.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.button7.Location = new System.Drawing.Point(14, 248);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(116, 33);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "IsCompleto";
-            this.button7.UseVisualStyleBackColor = false;
+            this.IsCompleto_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IsCompleto_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.IsCompleto_btn.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.IsCompleto_btn.Location = new System.Drawing.Point(14, 248);
+            this.IsCompleto_btn.Name = "IsCompleto_btn";
+            this.IsCompleto_btn.Size = new System.Drawing.Size(116, 33);
+            this.IsCompleto_btn.TabIndex = 19;
+            this.IsCompleto_btn.Text = "IsCompleto";
+            this.IsCompleto_btn.UseVisualStyleBackColor = false;
             // 
-            // IsNulo
+            // IsNulo_btn
             // 
-            this.IsNulo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.IsNulo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.IsNulo.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.IsNulo.Location = new System.Drawing.Point(14, 209);
-            this.IsNulo.Name = "IsNulo";
-            this.IsNulo.Size = new System.Drawing.Size(116, 33);
-            this.IsNulo.TabIndex = 18;
-            this.IsNulo.Text = "IsNulo";
-            this.IsNulo.UseVisualStyleBackColor = false;
-            this.IsNulo.Click += new System.EventHandler(this.IsNulo_Click);
+            this.IsNulo_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IsNulo_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.IsNulo_btn.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.IsNulo_btn.Location = new System.Drawing.Point(14, 209);
+            this.IsNulo_btn.Name = "IsNulo_btn";
+            this.IsNulo_btn.Size = new System.Drawing.Size(116, 33);
+            this.IsNulo_btn.TabIndex = 18;
+            this.IsNulo_btn.Text = "IsNulo";
+            this.IsNulo_btn.UseVisualStyleBackColor = false;
+            this.IsNulo_btn.Click += new System.EventHandler(this.IsNulo_Click);
             // 
-            // IsRegular
+            // IsRegular_btn
             // 
-            this.IsRegular.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.IsRegular.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.IsRegular.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.IsRegular.Location = new System.Drawing.Point(14, 170);
-            this.IsRegular.Name = "IsRegular";
-            this.IsRegular.Size = new System.Drawing.Size(116, 33);
-            this.IsRegular.TabIndex = 17;
-            this.IsRegular.Text = "IsRegular";
-            this.IsRegular.UseVisualStyleBackColor = false;
-            this.IsRegular.Click += new System.EventHandler(this.IsRegular_Click);
+            this.IsRegular_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IsRegular_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.IsRegular_btn.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.IsRegular_btn.Location = new System.Drawing.Point(14, 170);
+            this.IsRegular_btn.Name = "IsRegular_btn";
+            this.IsRegular_btn.Size = new System.Drawing.Size(116, 33);
+            this.IsRegular_btn.TabIndex = 17;
+            this.IsRegular_btn.Text = "IsRegular";
+            this.IsRegular_btn.UseVisualStyleBackColor = false;
+            this.IsRegular_btn.Click += new System.EventHandler(this.IsRegular_Click);
             // 
-            // IsPendente
+            // IsPendente_btn
             // 
-            this.IsPendente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.IsPendente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.IsPendente.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.IsPendente.Location = new System.Drawing.Point(14, 131);
-            this.IsPendente.Name = "IsPendente";
-            this.IsPendente.Size = new System.Drawing.Size(116, 33);
-            this.IsPendente.TabIndex = 16;
-            this.IsPendente.Text = "IsPendente";
-            this.IsPendente.UseVisualStyleBackColor = false;
-            this.IsPendente.Click += new System.EventHandler(this.IsPendente_Click);
+            this.IsPendente_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IsPendente_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.IsPendente_btn.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.IsPendente_btn.Location = new System.Drawing.Point(14, 131);
+            this.IsPendente_btn.Name = "IsPendente_btn";
+            this.IsPendente_btn.Size = new System.Drawing.Size(116, 33);
+            this.IsPendente_btn.TabIndex = 16;
+            this.IsPendente_btn.Text = "IsPendente";
+            this.IsPendente_btn.UseVisualStyleBackColor = false;
+            this.IsPendente_btn.Click += new System.EventHandler(this.IsPendente_Click);
             // 
-            // Is_isolado
+            // Is_isolado_btn
             // 
-            this.Is_isolado.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Is_isolado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.Is_isolado.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.Is_isolado.Location = new System.Drawing.Point(14, 92);
-            this.Is_isolado.Name = "Is_isolado";
-            this.Is_isolado.Size = new System.Drawing.Size(116, 33);
-            this.Is_isolado.TabIndex = 15;
-            this.Is_isolado.Text = "IsIsolado";
-            this.Is_isolado.UseVisualStyleBackColor = false;
-            this.Is_isolado.Click += new System.EventHandler(this.Is_isolado_Click);
+            this.Is_isolado_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Is_isolado_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Is_isolado_btn.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.Is_isolado_btn.Location = new System.Drawing.Point(14, 92);
+            this.Is_isolado_btn.Name = "Is_isolado_btn";
+            this.Is_isolado_btn.Size = new System.Drawing.Size(116, 33);
+            this.Is_isolado_btn.TabIndex = 15;
+            this.Is_isolado_btn.Text = "IsIsolado";
+            this.Is_isolado_btn.UseVisualStyleBackColor = false;
+            this.Is_isolado_btn.Click += new System.EventHandler(this.Is_isolado_Click);
             // 
-            // Get_Grau
+            // Get_Grau_btn
             // 
-            this.Get_Grau.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Get_Grau.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.Get_Grau.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.Get_Grau.Location = new System.Drawing.Point(14, 53);
-            this.Get_Grau.Name = "Get_Grau";
-            this.Get_Grau.Size = new System.Drawing.Size(116, 33);
-            this.Get_Grau.TabIndex = 14;
-            this.Get_Grau.Text = "GetGrau";
-            this.Get_Grau.UseVisualStyleBackColor = false;
-            this.Get_Grau.Click += new System.EventHandler(this.Get_Grau_Click);
+            this.Get_Grau_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Get_Grau_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Get_Grau_btn.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.Get_Grau_btn.Location = new System.Drawing.Point(14, 53);
+            this.Get_Grau_btn.Name = "Get_Grau_btn";
+            this.Get_Grau_btn.Size = new System.Drawing.Size(116, 33);
+            this.Get_Grau_btn.TabIndex = 14;
+            this.Get_Grau_btn.Text = "GetGrau";
+            this.Get_Grau_btn.UseVisualStyleBackColor = false;
+            this.Get_Grau_btn.Click += new System.EventHandler(this.Get_Grau_Click);
             // 
-            // List_vertices
+            // vertices_listBox
             // 
-            this.List_vertices.ColumnWidth = 50;
-            this.List_vertices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.List_vertices.FormattingEnabled = true;
-            this.List_vertices.ItemHeight = 20;
-            this.List_vertices.Location = new System.Drawing.Point(272, 154);
-            this.List_vertices.Name = "List_vertices";
-            this.List_vertices.Size = new System.Drawing.Size(202, 284);
-            this.List_vertices.TabIndex = 27;
-            this.List_vertices.Visible = false;
+            this.vertices_listBox.ColumnWidth = 50;
+            this.vertices_listBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vertices_listBox.FormattingEnabled = true;
+            this.vertices_listBox.ItemHeight = 20;
+            this.vertices_listBox.Location = new System.Drawing.Point(272, 154);
+            this.vertices_listBox.Name = "vertices_listBox";
+            this.vertices_listBox.Size = new System.Drawing.Size(202, 284);
+            this.vertices_listBox.TabIndex = 27;
+            this.vertices_listBox.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
-            this.label1.Location = new System.Drawing.Point(11, 506);
+            this.label1.Location = new System.Drawing.Point(7, 530);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 25);
             this.label1.TabIndex = 28;
             this.label1.Text = "Endereço do arquivo :";
             // 
-            // endereco
+            // endereco_label
             // 
-            this.endereco.AutoSize = true;
-            this.endereco.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 13F);
-            this.endereco.Location = new System.Drawing.Point(14, 533);
-            this.endereco.Name = "endereco";
-            this.endereco.Size = new System.Drawing.Size(46, 22);
-            this.endereco.TabIndex = 29;
-            this.endereco.Text = "label2";
+            this.endereco_label.AutoSize = true;
+            this.endereco_label.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 13F);
+            this.endereco_label.Location = new System.Drawing.Point(10, 557);
+            this.endereco_label.Name = "endereco_label";
+            this.endereco_label.Size = new System.Drawing.Size(46, 22);
+            this.endereco_label.TabIndex = 29;
+            this.endereco_label.Text = "label2";
             // 
             // label3
             // 
@@ -298,15 +298,15 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "Grafo:";
             // 
-            // tipo_grafo
+            // tipo_grafo_label
             // 
-            this.tipo_grafo.AutoSize = true;
-            this.tipo_grafo.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
-            this.tipo_grafo.Location = new System.Drawing.Point(56, 92);
-            this.tipo_grafo.Name = "tipo_grafo";
-            this.tipo_grafo.Size = new System.Drawing.Size(75, 25);
-            this.tipo_grafo.TabIndex = 31;
-            this.tipo_grafo.Text = "tipografo";
+            this.tipo_grafo_label.AutoSize = true;
+            this.tipo_grafo_label.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
+            this.tipo_grafo_label.Location = new System.Drawing.Point(56, 92);
+            this.tipo_grafo_label.Name = "tipo_grafo_label";
+            this.tipo_grafo_label.Size = new System.Drawing.Size(75, 25);
+            this.tipo_grafo_label.TabIndex = 31;
+            this.tipo_grafo_label.Text = "tipografo";
             // 
             // label5
             // 
@@ -318,15 +318,15 @@
             this.label5.TabIndex = 32;
             this.label5.Text = "Vertíces : ";
             // 
-            // quant_vertices
+            // quant_vertices_label
             // 
-            this.quant_vertices.AutoSize = true;
-            this.quant_vertices.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
-            this.quant_vertices.Location = new System.Drawing.Point(88, 124);
-            this.quant_vertices.Name = "quant_vertices";
-            this.quant_vertices.Size = new System.Drawing.Size(75, 25);
-            this.quant_vertices.TabIndex = 33;
-            this.quant_vertices.Text = "Qantvert";
+            this.quant_vertices_label.AutoSize = true;
+            this.quant_vertices_label.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
+            this.quant_vertices_label.Location = new System.Drawing.Point(88, 124);
+            this.quant_vertices_label.Name = "quant_vertices_label";
+            this.quant_vertices_label.Size = new System.Drawing.Size(75, 25);
+            this.quant_vertices_label.TabIndex = 33;
+            this.quant_vertices_label.Text = "Qantvert";
             // 
             // label7
             // 
@@ -338,21 +338,21 @@
             this.label7.TabIndex = 34;
             this.label7.Text = "Arestas :";
             // 
-            // quant_arestas
+            // quant_arestas_label
             // 
-            this.quant_arestas.AutoSize = true;
-            this.quant_arestas.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
-            this.quant_arestas.Location = new System.Drawing.Point(86, 154);
-            this.quant_arestas.Name = "quant_arestas";
-            this.quant_arestas.Size = new System.Drawing.Size(87, 25);
-            this.quant_arestas.TabIndex = 35;
-            this.quant_arestas.Text = "QuantAres";
+            this.quant_arestas_label.AutoSize = true;
+            this.quant_arestas_label.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
+            this.quant_arestas_label.Location = new System.Drawing.Point(86, 154);
+            this.quant_arestas_label.Name = "quant_arestas_label";
+            this.quant_arestas_label.Size = new System.Drawing.Size(87, 25);
+            this.quant_arestas_label.TabIndex = 35;
+            this.quant_arestas_label.Text = "QuantAres";
             // 
             // selecione_label
             // 
             this.selecione_label.AutoSize = true;
             this.selecione_label.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
-            this.selecione_label.Location = new System.Drawing.Point(312, 126);
+            this.selecione_label.Location = new System.Drawing.Point(303, 126);
             this.selecione_label.Name = "selecione_label";
             this.selecione_label.Size = new System.Drawing.Size(149, 25);
             this.selecione_label.TabIndex = 36;
@@ -369,35 +369,35 @@
             this.metodo_label.TabIndex = 37;
             this.metodo_label.Text = "Selecione um método";
             // 
-            // btn_geral
+            // geral_btn
             // 
-            this.btn_geral.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_geral.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_geral.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.btn_geral.Location = new System.Drawing.Point(327, 444);
-            this.btn_geral.Name = "btn_geral";
-            this.btn_geral.Size = new System.Drawing.Size(116, 33);
-            this.btn_geral.TabIndex = 39;
-            this.btn_geral.Text = "variavel";
-            this.btn_geral.UseVisualStyleBackColor = false;
-            this.btn_geral.Click += new System.EventHandler(this.btn_geral_Click);
+            this.geral_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.geral_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.geral_btn.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.geral_btn.Location = new System.Drawing.Point(327, 444);
+            this.geral_btn.Name = "geral_btn";
+            this.geral_btn.Size = new System.Drawing.Size(116, 33);
+            this.geral_btn.TabIndex = 39;
+            this.geral_btn.Text = "variavel";
+            this.geral_btn.UseVisualStyleBackColor = false;
+            this.geral_btn.Click += new System.EventHandler(this.btn_geral_Click);
             // 
-            // button1
+            // retona_btn
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(17, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 33);
-            this.button1.TabIndex = 40;
-            this.button1.UseVisualStyleBackColor = false;
+            this.retona_btn.BackColor = System.Drawing.Color.Transparent;
+            this.retona_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("retona_btn.BackgroundImage")));
+            this.retona_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.retona_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.retona_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.retona_btn.FlatAppearance.BorderSize = 0;
+            this.retona_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.retona_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.retona_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.retona_btn.Location = new System.Drawing.Point(17, 20);
+            this.retona_btn.Name = "retona_btn";
+            this.retona_btn.Size = new System.Drawing.Size(42, 33);
+            this.retona_btn.TabIndex = 40;
+            this.retona_btn.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -416,24 +416,24 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(846, 580);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_geral);
+            this.Controls.Add(this.retona_btn);
+            this.Controls.Add(this.geral_btn);
             this.Controls.Add(this.metodo_label);
             this.Controls.Add(this.selecione_label);
-            this.Controls.Add(this.quant_arestas);
+            this.Controls.Add(this.quant_arestas_label);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.quant_vertices);
+            this.Controls.Add(this.quant_vertices_label);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.tipo_grafo);
+            this.Controls.Add(this.tipo_grafo_label);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.endereco);
+            this.Controls.Add(this.endereco_label);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.List_vertices);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.vertices_listBox);
+            this.Controls.Add(this.MainPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuGNaoDirigido";
             this.Text = "Grafo não dirigido";
-            this.panel1.ResumeLayout(false);
+            this.MainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,34 +441,34 @@
 
         #endregion
 
-        private System.Windows.Forms.Button IsAdjacente;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button IsNulo;
-        private System.Windows.Forms.Button IsRegular;
-        private System.Windows.Forms.Button IsPendente;
-        private System.Windows.Forms.Button Is_isolado;
-        private System.Windows.Forms.Button Get_Grau;
-        private System.Windows.Forms.ListBox List_vertices;
+        private System.Windows.Forms.Button IsAdjacente_btn;
+        private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.Button GetCut_Vertices_btn;
+        private System.Windows.Forms.Button GetAGMKruskal_btn;
+        private System.Windows.Forms.Button GetAGMPrim_btn;
+        private System.Windows.Forms.Button GetComplementar_btn;
+        private System.Windows.Forms.Button IsUnicursal_btn;
+        private System.Windows.Forms.Button IsEuleriano_btn;
+        private System.Windows.Forms.Button IsConexo_btn;
+        private System.Windows.Forms.Button IsCompleto_btn;
+        private System.Windows.Forms.Button IsNulo_btn;
+        private System.Windows.Forms.Button IsRegular_btn;
+        private System.Windows.Forms.Button IsPendente_btn;
+        private System.Windows.Forms.Button Is_isolado_btn;
+        private System.Windows.Forms.Button Get_Grau_btn;
+        private System.Windows.Forms.ListBox vertices_listBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label endereco;
+        private System.Windows.Forms.Label endereco_label;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label tipo_grafo;
+        private System.Windows.Forms.Label tipo_grafo_label;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label quant_vertices;
+        private System.Windows.Forms.Label quant_vertices_label;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label quant_arestas;
+        private System.Windows.Forms.Label quant_arestas_label;
         private System.Windows.Forms.Label selecione_label;
         private System.Windows.Forms.Label metodo_label;
-        private System.Windows.Forms.Button btn_geral;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button geral_btn;
+        private System.Windows.Forms.Button retona_btn;
         private System.Windows.Forms.Label label2;
     }
 }

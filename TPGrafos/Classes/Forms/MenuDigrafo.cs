@@ -13,7 +13,8 @@ namespace TPGrafos
 {
     partial class Digrafo : Form
     {
-        private GDirigido g; 
+        private GDirigido g;
+        string metodo = "";
 
         public Digrafo(GDirigido g)
         {

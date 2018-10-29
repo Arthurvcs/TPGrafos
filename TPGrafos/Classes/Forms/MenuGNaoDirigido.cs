@@ -26,7 +26,7 @@ namespace TPGrafos
 
             for (int i = 0; i < aux.Length; i++)
             {
-                this.List_vertices.Items.Add(aux[i].Nome.ToString());
+                this.vertices_listBox.Items.Add(aux[i].Nome.ToString());
             }
 
         }
@@ -35,17 +35,17 @@ namespace TPGrafos
             InitializeComponent();
             this.g = g;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.endereco.Text = endereco;
-            this.quant_arestas.Text = g.Arestas.Tamanho.ToString();
-            this.quant_vertices.Text = g.Vertices.Tamanho.ToString();
-            this.tipo_grafo.Text = "Não dirigido";
-            this.btn_geral.Visible = false;
+            this.endereco_label.Text = endereco;
+            this.quant_arestas_label.Text = g.Arestas.Tamanho.ToString();
+            this.quant_vertices_label.Text = g.Vertices.Tamanho.ToString();
+            this.tipo_grafo_label.Text = "Não dirigido";
+            this.geral_btn.Visible = false;
 
             Vertice[] aux = g.Vertices.GeraVetor();
 
             for (int i = 0; i < aux.Length; i++)
             {
-                this.List_vertices.Items.Add(aux[i].Nome.ToString());
+                this.vertices_listBox.Items.Add(aux[i].Nome.ToString());
             }
         }
 
@@ -67,12 +67,12 @@ namespace TPGrafos
         {
             if (metodo == "GETGRAU")
             {
-                Vertice aux = new Vertice(Convert.ToInt32(List_vertices.SelectedItem));
-                MessageBox.Show("O vértice " + List_vertices.SelectedItem.ToString() + " possui grau: " + g.GetGrau(aux).ToString(), this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
+                MessageBox.Show("O vértice " + vertices_listBox.SelectedItem.ToString() + " possui grau: " + g.GetGrau(aux).ToString(), this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             if (metodo == "ISISOLADO")
             {
-                Vertice aux = new Vertice(Convert.ToInt32(List_vertices.SelectedItem));
+                Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
                 if (g.IsIsolado(aux))
                 { MessageBox.Show("O vértice é isolado.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
                 else
@@ -81,7 +81,7 @@ namespace TPGrafos
             }
             if (metodo == "ISPENDENTE")
             {
-                Vertice aux = new Vertice(Convert.ToInt32(List_vertices.SelectedItem));
+                Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
                 if (g.IsPendente(aux))
                 { MessageBox.Show("O vértice é pendente.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
                 else
@@ -89,11 +89,11 @@ namespace TPGrafos
 
             }
 
-            List_vertices.Visible = false;
+            vertices_listBox.Visible = false;
             selecione_label.Visible = false;
             metodo_label.Visible = false;
-            this.btn_geral.Visible = false;
-            this.btn_geral.Text = "Verificar o grau";
+            this.geral_btn.Visible = false;
+            this.geral_btn.Text = "Verificar o grau";
             this.metodo = "";
 
         }
@@ -102,10 +102,10 @@ namespace TPGrafos
         {
             this.metodo = "GETGRAU";
             metodo_label.Visible = false;
-            List_vertices.Visible = true;
+            vertices_listBox.Visible = true;
             selecione_label.Visible = true;
-            this.btn_geral.Visible = true;
-            this.btn_geral.Text = "Verificar o grau";
+            this.geral_btn.Visible = true;
+            this.geral_btn.Text = "Verificar o grau";
             selecione_label.Text = "Selecione o vértice desejado";
         }
 
@@ -113,10 +113,10 @@ namespace TPGrafos
         {
             this.metodo = "ISISOLADO";
             metodo_label.Visible = false;
-            List_vertices.Visible = true;
+            vertices_listBox.Visible = true;
             selecione_label.Visible = true;
-            this.btn_geral.Visible = true;
-            this.btn_geral.Text = "Verificar o grau";
+            this.geral_btn.Visible = true;
+            this.geral_btn.Text = "Verificar o grau";
             selecione_label.Text = "Selecione o vértice desejado";
         }
 
@@ -124,10 +124,10 @@ namespace TPGrafos
         {
             this.metodo = "ISPENDENTE";
             metodo_label.Visible = false;
-            List_vertices.Visible = true;
+            vertices_listBox.Visible = true;
             selecione_label.Visible = true;
-            this.btn_geral.Visible = true;
-            this.btn_geral.Text = "Verificar o grau";
+            this.geral_btn.Visible = true;
+            this.geral_btn.Text = "Verificar o grau";
             selecione_label.Text = "Selecione o vértice desejado";
         }
 
@@ -135,13 +135,13 @@ namespace TPGrafos
         {
             this.metodo = "ISREGULAR";
             metodo_label.Visible = false;
-            List_vertices.Visible = false;
+            vertices_listBox.Visible = false;
             selecione_label.Visible = false;
-            this.btn_geral.Visible = false;
-            this.btn_geral.Text = "";
+            this.geral_btn.Visible = false;
+            this.geral_btn.Text = "";
             selecione_label.Text = "";
 
-            Vertice aux = new Vertice(Convert.ToInt32(List_vertices.SelectedItem));
+            Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
             if (g.IsRegular())
             { MessageBox.Show("O grafo é regular.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
             else
@@ -153,13 +153,13 @@ namespace TPGrafos
         {
             this.metodo = "ISNULO";
             metodo_label.Visible = false;
-            List_vertices.Visible = false;
+            vertices_listBox.Visible = false;
             selecione_label.Visible = false;
-            this.btn_geral.Visible = false;
-            this.btn_geral.Text = "";
+            this.geral_btn.Visible = false;
+            this.geral_btn.Text = "";
             selecione_label.Text = "";
 
-            Vertice aux = new Vertice(Convert.ToInt32(List_vertices.SelectedItem));
+            Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
             if (g.IsNulo())
             { MessageBox.Show("O grafo é nulo.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
             else
