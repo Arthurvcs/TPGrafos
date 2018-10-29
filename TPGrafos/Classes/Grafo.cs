@@ -15,7 +15,7 @@ namespace TPGrafos.Classes
         public bool digrafo;
 
         public Grafo()
-        {}
+        { }
 
         public virtual Grafo GetGrafo(Stream arquivo)
         {
@@ -46,11 +46,11 @@ namespace TPGrafos.Classes
         private void IsDigrafo(string arquivo)
         {
             string[] linhas = arquivo.Replace("\r", "").Split('\n');
-            if(linhas.Length == 1)
+            if (linhas.Length == 1)
             { this.digrafo = false; }
             linhas = linhas[1].Replace("\r", "").Split('\n', ';');
 
-            if (linhas.Length == 3) { this.digrafo  =false; }
+            if (linhas.Length == 3) { this.digrafo = false; }
             else { this.digrafo = true; }
         }
 
@@ -59,11 +59,11 @@ namespace TPGrafos.Classes
         /// </summary>
         /// <param name="caminho">o arquivo que o usuário informa</param>
         /// <returns>Retorna um grafo</returns>
-        protected  Grafo GeraGrafo(Stream caminho)
+        protected Grafo GeraGrafo(Stream caminho)
         {
             Grafo g;
             ListaVertice vertices = new ListaVertice();
-            ListaAresta arestas = new ListaAresta();          
+            ListaAresta arestas = new ListaAresta();
 
             string arquivo = LeitorArquivo.LerArquivo(caminho);//As linhas do arquivos sem tratamento
             string[] infoGrafo = LeitorArquivo.FormatarArquivo(arquivo);// Vetor com o arquivo tratado
@@ -84,17 +84,25 @@ namespace TPGrafos.Classes
 
                     Aresta auxA;
 
-                    if (int.Parse(infoGrafo[i+3]) == 1) //Se a aresta tem direção 1, cria a aresta com origem e destino na sequencia informada
+                    if (int.Parse(infoGrafo[i + 3]) == 1) //Se a aresta tem direção 1, cria a aresta com origem e destino na sequencia informada
                     {
-                        auxA = new Aresta(new Vertice(int.Parse(infoGrafo[i])), new Vertice(int.Parse(infoGrafo[i + 1])), int.Parse(infoGrafo[i + 2]));
+                        Vertice auxVo = vertices.BuscarVertice(new Vertice(Convert.ToInt32(infoGrafo[i])));
+                        Vertice auxVd = vertices.BuscarVertice(new Vertice(Convert.ToInt32(infoGrafo[i + 1])));
+
+
+                        auxA = new Aresta(auxVo, auxVd, int.Parse(infoGrafo[i + 2]));
                         arestas.Adicionar(auxA);
                     }
                     else //se não, cria a aresta com origem e destino na direção inversa
                     {
-                        auxA = new Aresta(new Vertice(int.Parse(infoGrafo[i+1])), new Vertice(int.Parse(infoGrafo[i])), int.Parse(infoGrafo[i + 2]));
+                        Vertice auxVo = vertices.BuscarVertice(new Vertice(Convert.ToInt32(infoGrafo[i + 1])));
+                        Vertice auxVd = vertices.BuscarVertice(new Vertice(Convert.ToInt32(infoGrafo[i])));
+
+
+                        auxA = new Aresta(auxVo, auxVd, int.Parse(infoGrafo[i + 2]));
                         arestas.Adicionar(auxA);
                     }
-                    
+
 
                     if (vertices.Buscar(auxA.Origem) == null)
                     {
@@ -123,7 +131,12 @@ namespace TPGrafos.Classes
                 for (int i = 1; i < infoGrafo.Length; i = i + 3)
                 {
                     //Lista de arestas
-                    Aresta auxA = new Aresta(new Vertice(int.Parse(infoGrafo[i])), new Vertice(int.Parse(infoGrafo[i + 1])), int.Parse(infoGrafo[i + 2]));
+
+                    Vertice auxVo = vertices.BuscarVertice(new Vertice(Convert.ToInt32(infoGrafo[i])));
+                    Vertice auxVd = vertices.BuscarVertice(new Vertice(Convert.ToInt32(infoGrafo[i + 1])));
+
+
+                    Aresta auxA = new Aresta(auxVo, auxVd, int.Parse(infoGrafo[i + 2]));
                     arestas.Adicionar(auxA);
 
                     if (vertices.Buscar(auxA.Origem) == null)
@@ -132,7 +145,7 @@ namespace TPGrafos.Classes
                         vertices.BuscarAdicionarOrigem(auxA);
                     }
                     else
-                    { vertices.BuscarVertice(auxA.Origem).Arestas.Adicionar(auxA);}
+                    { vertices.BuscarVertice(auxA.Origem).Arestas.Adicionar(auxA); }
 
                     if (vertices.Buscar(auxA.Destino) == null)
                     {

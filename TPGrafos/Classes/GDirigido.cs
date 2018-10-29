@@ -141,7 +141,7 @@ namespace TPGrafos.Classes
                 {
                     if (visitados.Contains(auxA.Destino.Nome))
                     {
-                        if (visitaCount == visitados.Length && auxA.Destino.Equals(vStart))
+                        if ((visitaCount+1) == visitados.Length && auxA.Destino.Equals((Vertice)vStart.Dados))
                         {
                             return true;
                         }
@@ -165,7 +165,7 @@ namespace TPGrafos.Classes
 
                     if (visitados.Contains(auxA.Destino.Nome))
                     {
-                        if (visitaCount == visitados.Length && auxA.Destino.Equals(vStart))
+                        if ((visitaCount + 1) == visitados.Length && auxA.Destino.Equals((Vertice)vStart.Dados))
                         {
                             return true;
                         }
