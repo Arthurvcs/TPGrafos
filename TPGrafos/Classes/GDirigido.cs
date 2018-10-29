@@ -10,7 +10,7 @@ namespace TPGrafos.Classes
 {
     internal class GDirigido : Grafo
     {
-        public  GDirigido()
+        public GDirigido()
         {
         }
 
@@ -18,7 +18,7 @@ namespace TPGrafos.Classes
         {
             return (GNaoDirigido)GeraGrafo(arquivo);
         }
-        public GDirigido(ListaVertice vertices, ListaAresta arestas):base(vertices,arestas)
+        public GDirigido(ListaVertice vertices, ListaAresta arestas) : base(vertices, arestas)
         {
             this.vertices = vertices;
             this.arestas = arestas;
@@ -44,11 +44,12 @@ namespace TPGrafos.Classes
                 if (auxA.Destino.Equals(v1)) //se o vertice de destino da aresta atual é igual ao vertice informado 
                 {
                     grauEntrada++; //aumenta o valor do grau de entrada do vertice a ser retornado
+                    aux = aux.Prox;
                 }
                 else
                     aux = aux.Prox; //parte para o proximo elemento
             }
-            
+
             return grauEntrada;
         }
 
@@ -67,13 +68,14 @@ namespace TPGrafos.Classes
 
             while (aux != null)
             {
-                Aresta auxA = (Aresta)aux.Dados; 
+                Aresta auxA = (Aresta)aux.Dados;
 
                 if (auxA.Origem.Equals(v1)) //se o vertice de origem da aresta atual é igual ao vertice informado 
                 {
                     grauSaida++; //aumenta o valor do grau de saída do vertice a ser retornado
+                    aux = aux.Prox;
                 }
-                else 
+                else
                     aux = aux.Prox; //parte para o proximo elemento
             }
 
@@ -90,25 +92,30 @@ namespace TPGrafos.Classes
         {
             Elemento vStart = this.vertices.pri.Prox;
 
-            Vertex[] vertexes = new Vertex[this.vertices.Tamanho];
+            int[] visitados = new int[this.vertices.Tamanho];
+            int visitaCount = 0;
 
             Elemento auxV = this.vertices.pri.Prox;
 
-            for (int i = 0; i <= vertexes.Length; i++)
-            {
-                vertexes[i].vertice = (Vertice)auxV.Dados;
-                vertexes[i].cor = 1;
+            //for (int i = 0; i <= visitados.Length; i++)
+            //{
+            //    visitados[i].vertice = (Vertice)auxV.Dados;
+            //    visitados[i].cor = 1;
 
-                auxV = auxV.Prox;
-            }
+            //    auxV = auxV.Prox;
+            //}
 
             auxV = vStart;
             int fimBusca = 0;
+            Vertice auxVx = (Vertice)auxV.Dados;
+
+            //for (int i = 0; i < vertexes.Length; i++)
+            //{
+
+            //}
 
             while (fimBusca == 0)
             {
-                Vertice auxVx = (Vertice)auxV.Dados;
-
                 if (GetGrauEntrada(auxVx) != 1) //se o grau de entrada não for 1, significa que não existe um ciclo, pois não existe aresta chegando ao vertice ou existem mais de uma aresta chegando ao vertice
                 {
                     fimBusca = 1; //indica que a busca pelo ciclo terminou
@@ -125,12 +132,56 @@ namespace TPGrafos.Classes
 
                 if (auxA.Origem.Equals(auxVx))
                 {
+                    if (visitados.Contains(auxA.Destino.Nome))
+                    {
+                        if (visitaCount == visitados.Length && auxA.Destino.Equals(vStart))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            fimBusca = 1; //indica que a busca pelo ciclo terminou
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        visitados[visitaCount] = auxVx.Nome;
+                        visitaCount++;
+                        auxVx = auxA.Destino;
+                    }
 
+                }
+                else
+                {
+                    auxA = (Aresta)AuxAr.Prox.Dados;
+
+                    if (visitados.Contains(auxA.Destino.Nome))
+                    {
+                        if (visitaCount == visitados.Length && auxA.Destino.Equals(vStart))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            fimBusca = 1; //indica que a busca pelo ciclo terminou
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        visitados[visitaCount] = auxVx.Nome;
+                        visitaCount++;
+                        auxVx = auxA.Destino;
+                    }
                 }
             }
 
-            return true;
-
+            if (fimBusca == 1)
+            {
+                return false;
+            }
+            else return true;
         }
     }
 }

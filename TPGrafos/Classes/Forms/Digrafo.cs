@@ -23,5 +23,18 @@ namespace TPGrafos
         }
 
         public GDirigido grafo { get { return this.g; } set { this.g = value; } }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (this.g.HasCiclo())
+            {
+                MessageBox.Show("Tem ciclo");
+            }
+            else
+            {
+                MessageBox.Show("Não tem ciclo");
+            }
+            
+        }
     }
 }
