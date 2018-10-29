@@ -223,28 +223,31 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MainPanel.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
-  <data name="listBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="vertices_listBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>272, 154</value>
   </data>
-  <data name="listBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="vertices_listBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 277</value>
   </data>
-  <data name="listBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="vertices_listBox.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="&gt;&gt;listBox1.Name" xml:space="preserve">
-    <value>listBox1</value>
+  <data name="vertices_listBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;listBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;vertices_listBox.Name" xml:space="preserve">
+    <value>vertices_listBox</value>
+  </data>
+  <data name="&gt;&gt;vertices_listBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;listBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;vertices_listBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;listBox1.ZOrder" xml:space="preserve">
-    <value>12</value>
+  <data name="&gt;&gt;vertices_listBox.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -274,7 +277,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="retorna_btn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -315,7 +318,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;retorna_btn.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="quant_arestas_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -345,7 +348,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;quant_arestas_label.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -375,7 +378,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="quant_vertices_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -405,7 +408,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;quant_vertices_label.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -435,7 +438,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="tipo_grafo_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -465,7 +468,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tipo_grafo_label.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -495,7 +498,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="selecione_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -528,7 +531,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;selecione_label.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="metodo_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -558,7 +561,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;metodo_label.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="endereco_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -588,7 +591,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;endereco_label.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -618,7 +621,37 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="geral_btn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 8.25pt</value>
+  </data>
+  <data name="geral_btn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 444</value>
+  </data>
+  <data name="geral_btn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 33</value>
+  </data>
+  <data name="geral_btn.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="geral_btn.Text" xml:space="preserve">
+    <value>variavel</value>
+  </data>
+  <data name="geral_btn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;geral_btn.Name" xml:space="preserve">
+    <value>geral_btn</value>
+  </data>
+  <data name="&gt;&gt;geral_btn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;geral_btn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;geral_btn.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -964,7 +997,7 @@
     <value>Digrafo</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Digrafo</value>
+    <value>MenuDigrafo</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

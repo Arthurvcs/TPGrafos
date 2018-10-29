@@ -45,14 +45,11 @@ namespace TPGrafos
                 {
                     g = (GDirigido)g.GetGrafo(biblioteca.OpenFile());
 
-                    MenuDigrafo MenuGDirigido = new MenuDigrafo((GDirigido)g);
+                    MenuDigrafo MenuGDirigido = new MenuDigrafo((GDirigido)g,biblioteca.FileName);
                     this.Hide();
                     MenuGDirigido.ShowDialog();
                     this.Close();
                 }
-
-                //    grafo = (GNaoDirigido)grafo.GetGrafo(biblioteca.OpenFile());
-                //grafo.IsAdjacente(new Vertice(1) ,new Vertice(3));
             }
         }
     }

@@ -95,6 +95,8 @@ namespace TPGrafos
             this.geral_btn.Visible = false;
             this.geral_btn.Text = "Verificar o grau";
             this.metodo = "";
+            this.metodo_label.Visible = true;
+
 
         }
 
@@ -146,6 +148,7 @@ namespace TPGrafos
             { MessageBox.Show("O grafo é regular.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
             else
             { MessageBox.Show("O grafo não é regular.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+            this.metodo_label.Visible = true;
 
         }
 
@@ -164,6 +167,8 @@ namespace TPGrafos
             { MessageBox.Show("O grafo é nulo.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
             else
             { MessageBox.Show("O grafo não é nulo.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+            this.metodo_label.Visible = true;
+
         }
     }
 }

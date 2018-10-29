@@ -33,7 +33,7 @@
             this.HasCiclo_btn = new System.Windows.Forms.Button();
             this.GetGrauSaida_btn = new System.Windows.Forms.Button();
             this.GetGrauEntrada_btn = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.vertices_listBox = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.retorna_btn = new System.Windows.Forms.Button();
             this.quant_arestas_label = new System.Windows.Forms.Label();
@@ -46,6 +46,7 @@
             this.metodo_label = new System.Windows.Forms.Label();
             this.endereco_label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.geral_btn = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             resources.ApplyResources(this.HasCiclo_btn, "HasCiclo_btn");
             this.HasCiclo_btn.Name = "HasCiclo_btn";
             this.HasCiclo_btn.UseVisualStyleBackColor = false;
-            this.HasCiclo_btn.Click += new System.EventHandler(this.button3_Click_1);
+            this.HasCiclo_btn.Click += new System.EventHandler(this.HasCiclo_btn_Click);
             // 
             // GetGrauSaida_btn
             // 
@@ -82,11 +83,11 @@
             this.GetGrauEntrada_btn.Name = "GetGrauEntrada_btn";
             this.GetGrauEntrada_btn.UseVisualStyleBackColor = false;
             // 
-            // listBox1
+            // vertices_listBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            resources.ApplyResources(this.listBox1, "listBox1");
-            this.listBox1.Name = "listBox1";
+            this.vertices_listBox.FormattingEnabled = true;
+            resources.ApplyResources(this.vertices_listBox, "vertices_listBox");
+            this.vertices_listBox.Name = "vertices_listBox";
             // 
             // label2
             // 
@@ -155,11 +156,20 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // Digrafo
+            // geral_btn
+            // 
+            this.geral_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.geral_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.geral_btn, "geral_btn");
+            this.geral_btn.Name = "geral_btn";
+            this.geral_btn.UseVisualStyleBackColor = false;
+            // 
+            // MenuDigrafo
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.geral_btn);
             this.Controls.Add(this.endereco_label);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.metodo_label);
@@ -172,9 +182,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tipo_grafo_label);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.vertices_listBox);
             this.Controls.Add(this.MainPanel);
-            this.Name = "Digrafo";
+            this.Name = "MenuDigrafo";
             this.MainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -187,7 +197,7 @@
         private System.Windows.Forms.Button GetGrauSaida_btn;
         private System.Windows.Forms.Button GetGrauEntrada_btn;
         private System.Windows.Forms.Button HasCiclo_btn;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox vertices_listBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button retorna_btn;
         private System.Windows.Forms.Label quant_arestas_label;
@@ -200,5 +210,6 @@
         private System.Windows.Forms.Label metodo_label;
         private System.Windows.Forms.Label endereco_label;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button geral_btn;
     }
 }
