@@ -29,7 +29,10 @@ namespace TPGrafos
             if (biblioteca.ShowDialog() == DialogResult.OK)
             {
                 Grafo g = new Grafo();
-                if (g.digrafo == true) {
+                g = g.GetGrafo(biblioteca.OpenFile());
+
+                if (g.digrafo == false)
+                {
 
                     g = (GNaoDirigido)g.GetGrafo(biblioteca.OpenFile());
                     

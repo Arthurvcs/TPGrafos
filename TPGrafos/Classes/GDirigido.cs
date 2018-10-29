@@ -14,14 +14,21 @@ namespace TPGrafos.Classes
         {
         }
 
-        public override Grafo GetGrafo(Stream arquivo)
-        {
-            return (GNaoDirigido)GeraGrafo(arquivo);
-        }
+        //public override Grafo GetGrafo(Stream arquivo)
+        //{
+        //    return (GDirigido)GeraGrafo(arquivo);
+        //}
         public GDirigido(ListaVertice vertices, ListaAresta arestas) : base(vertices, arestas)
         {
             this.vertices = vertices;
             this.arestas = arestas;
+        }
+
+        public GDirigido(ListaVertice vertices, ListaAresta arestas, bool _digrafo) : base(vertices, arestas, _digrafo)
+        {
+            this.vertices = vertices;
+            this.arestas = arestas;
+            this.digrafo = _digrafo;
         }
 
         /// <summary>

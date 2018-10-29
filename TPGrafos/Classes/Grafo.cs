@@ -28,6 +28,13 @@ namespace TPGrafos.Classes
             this.arestas = arestas;
         }
 
+        public Grafo(ListaVertice vertices, ListaAresta arestas, bool _digrafo)
+        {
+            this.vertices = vertices;
+            this.arestas = arestas;
+            this.digrafo = _digrafo;
+        }
+
         /// <summary>
         /// Método para verificar se o grafo é orientado
         /// </summary>
@@ -80,6 +87,7 @@ namespace TPGrafos.Classes
                     if (int.Parse(infoGrafo[i+3]) == 1) //Se a aresta tem direção 1, cria a aresta com origem e destino na sequencia informada
                     {
                         auxA = new Aresta(new Vertice(int.Parse(infoGrafo[i])), new Vertice(int.Parse(infoGrafo[i + 1])), int.Parse(infoGrafo[i + 2]));
+                        arestas.Adicionar(auxA);
                     }
                     else //se não, cria a aresta com origem e destino na direção inversa
                     {
@@ -104,7 +112,7 @@ namespace TPGrafos.Classes
                     else
                     { vertices.BuscarVertice(auxA.Destino).Arestas.Adicionar(auxA); }
                 }
-                return g = new GDirigido(vertices, arestas);
+                return g = new GDirigido(vertices, arestas, this.digrafo);
             }
             else //Não é orientado
             {
@@ -134,7 +142,7 @@ namespace TPGrafos.Classes
                     else
                     { vertices.BuscarVertice(auxA.Destino).Arestas.Adicionar(auxA); }
                 }
-                return g = new GNaoDirigido(vertices, arestas);
+                return g = new GNaoDirigido(vertices, arestas, this.digrafo);
             }
         }
 

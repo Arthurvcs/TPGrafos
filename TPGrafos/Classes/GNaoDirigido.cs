@@ -22,6 +22,13 @@ namespace TPGrafos.Classes
             this.arestas = arestas;
         }
 
+        public GNaoDirigido(ListaVertice vertices, ListaAresta arestas, bool _digrafo) : base(vertices, arestas, _digrafo)
+        {
+            this.vertices = vertices;
+            this.arestas = arestas;
+            this.digrafo = _digrafo;
+        }
+
         /// <summary>
         /// Um vertice é adjacente a outro caso haja uma aresta que o liga com outro vértice
         /// </summary>
