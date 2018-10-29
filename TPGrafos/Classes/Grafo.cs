@@ -61,6 +61,8 @@ namespace TPGrafos.Classes
             string[] infoGrafo = LeitorArquivo.FormatarArquivo(arquivo);// Vetor com o arquivo tratado
             string[] linhasArquivo = arquivo.Replace("\r", "").Split('\n');//Vetor com as linhas do arquivo (utilizada no for para gerar o grafo)
 
+            this.IsDigrafo(arquivo);
+
             //é orientado
             if (digrafo)
             {
@@ -74,7 +76,7 @@ namespace TPGrafos.Classes
 
                     Aresta auxA;
 
-                    if (int.Parse(infoGrafo[i]) == 1) //Se a aresta tem direção 1, cria a aresta com origem e destino na sequencia informada
+                    if (int.Parse(infoGrafo[i+3]) == 1) //Se a aresta tem direção 1, cria a aresta com origem e destino na sequencia informada
                     {
                         auxA = new Aresta(new Vertice(int.Parse(infoGrafo[i])), new Vertice(int.Parse(infoGrafo[i + 1])), int.Parse(infoGrafo[i + 2]));
                     }

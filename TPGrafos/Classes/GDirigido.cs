@@ -44,6 +44,7 @@ namespace TPGrafos.Classes
                 if (auxA.Destino.Equals(v1)) //se o vertice de destino da aresta atual é igual ao vertice informado 
                 {
                     grauEntrada++; //aumenta o valor do grau de entrada do vertice a ser retornado
+                    aux = aux.Prox;
                 }
                 else
                     aux = aux.Prox; //parte para o proximo elemento
@@ -72,6 +73,7 @@ namespace TPGrafos.Classes
                 if (auxA.Origem.Equals(v1)) //se o vertice de origem da aresta atual é igual ao vertice informado 
                 {
                     grauSaida++; //aumenta o valor do grau de saída do vertice a ser retornado
+                    aux = aux.Prox;
                 }
                 else
                     aux = aux.Prox; //parte para o proximo elemento

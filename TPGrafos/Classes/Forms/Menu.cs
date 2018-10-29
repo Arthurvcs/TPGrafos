@@ -29,7 +29,7 @@ namespace TPGrafos
             if (biblioteca.ShowDialog() == DialogResult.OK)
             {
                 Grafo g = new Grafo();
-                if (!g.digrafo) {
+                if (g.digrafo == true) {
 
                     g = (GNaoDirigido)g.GetGrafo(biblioteca.OpenFile());
                     
@@ -40,6 +40,8 @@ namespace TPGrafos
                 }
                 else
                 {
+                    g = (GDirigido)g.GetGrafo(biblioteca.OpenFile());
+
                     Digrafo MenuGDirigido = new Digrafo((GDirigido)g);
                     this.Hide();
                     MenuGDirigido.ShowDialog();
