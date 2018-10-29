@@ -10,6 +10,7 @@ namespace TPGrafos.Classes.Estruturas
     {
         public Vertice BuscarVertice(Vertice v) { return (Vertice)Buscar(v); }
 
+
         public void BuscarAdicionarOrigem(Aresta a)
         {
             Vertice auxOrigem = (Vertice)Buscar(a.Origem);

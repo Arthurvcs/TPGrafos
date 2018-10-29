@@ -39,11 +39,11 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.IsNulo = new System.Windows.Forms.Button();
+            this.IsRegular = new System.Windows.Forms.Button();
+            this.IsPendente = new System.Windows.Forms.Button();
+            this.Is_isolado = new System.Windows.Forms.Button();
+            this.Get_Grau = new System.Windows.Forms.Button();
             this.List_vertices = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.endereco = new System.Windows.Forms.Label();
@@ -53,6 +53,11 @@
             this.quant_vertices = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.quant_arestas = new System.Windows.Forms.Label();
+            this.selecione_label = new System.Windows.Forms.Label();
+            this.metodo_label = new System.Windows.Forms.Label();
+            this.btn_geral = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +72,7 @@
             this.IsAdjacente.TabIndex = 13;
             this.IsAdjacente.Text = "IsAdjacente";
             this.IsAdjacente.UseVisualStyleBackColor = false;
+            this.IsAdjacente.Click += new System.EventHandler(this.IsAdjacente_Click);
             // 
             // panel1
             // 
@@ -78,11 +84,11 @@
             this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.IsNulo);
+            this.panel1.Controls.Add(this.IsRegular);
+            this.panel1.Controls.Add(this.IsPendente);
+            this.panel1.Controls.Add(this.Is_isolado);
+            this.panel1.Controls.Add(this.Get_Grau);
             this.panel1.Controls.Add(this.IsAdjacente);
             this.panel1.Location = new System.Drawing.Point(696, 2);
             this.panel1.Name = "panel1";
@@ -185,73 +191,82 @@
             this.button7.Text = "IsCompleto";
             this.button7.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // IsNulo
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button6.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.button6.Location = new System.Drawing.Point(14, 209);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(116, 33);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "IsNulo";
-            this.button6.UseVisualStyleBackColor = false;
+            this.IsNulo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IsNulo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.IsNulo.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.IsNulo.Location = new System.Drawing.Point(14, 209);
+            this.IsNulo.Name = "IsNulo";
+            this.IsNulo.Size = new System.Drawing.Size(116, 33);
+            this.IsNulo.TabIndex = 18;
+            this.IsNulo.Text = "IsNulo";
+            this.IsNulo.UseVisualStyleBackColor = false;
+            this.IsNulo.Click += new System.EventHandler(this.IsNulo_Click);
             // 
-            // button5
+            // IsRegular
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.button5.Location = new System.Drawing.Point(14, 170);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(116, 33);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "IsRegular";
-            this.button5.UseVisualStyleBackColor = false;
+            this.IsRegular.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IsRegular.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.IsRegular.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.IsRegular.Location = new System.Drawing.Point(14, 170);
+            this.IsRegular.Name = "IsRegular";
+            this.IsRegular.Size = new System.Drawing.Size(116, 33);
+            this.IsRegular.TabIndex = 17;
+            this.IsRegular.Text = "IsRegular";
+            this.IsRegular.UseVisualStyleBackColor = false;
+            this.IsRegular.Click += new System.EventHandler(this.IsRegular_Click);
             // 
-            // button4
+            // IsPendente
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.button4.Location = new System.Drawing.Point(14, 131);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(116, 33);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "IsPendente";
-            this.button4.UseVisualStyleBackColor = false;
+            this.IsPendente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IsPendente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.IsPendente.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.IsPendente.Location = new System.Drawing.Point(14, 131);
+            this.IsPendente.Name = "IsPendente";
+            this.IsPendente.Size = new System.Drawing.Size(116, 33);
+            this.IsPendente.TabIndex = 16;
+            this.IsPendente.Text = "IsPendente";
+            this.IsPendente.UseVisualStyleBackColor = false;
+            this.IsPendente.Click += new System.EventHandler(this.IsPendente_Click);
             // 
-            // button3
+            // Is_isolado
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.button3.Location = new System.Drawing.Point(14, 92);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(116, 33);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "IsIsolado";
-            this.button3.UseVisualStyleBackColor = false;
+            this.Is_isolado.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Is_isolado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Is_isolado.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.Is_isolado.Location = new System.Drawing.Point(14, 92);
+            this.Is_isolado.Name = "Is_isolado";
+            this.Is_isolado.Size = new System.Drawing.Size(116, 33);
+            this.Is_isolado.TabIndex = 15;
+            this.Is_isolado.Text = "IsIsolado";
+            this.Is_isolado.UseVisualStyleBackColor = false;
+            this.Is_isolado.Click += new System.EventHandler(this.Is_isolado_Click);
             // 
-            // button2
+            // Get_Grau
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.button2.Location = new System.Drawing.Point(14, 53);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 33);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "GetGrau";
-            this.button2.UseVisualStyleBackColor = false;
+            this.Get_Grau.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Get_Grau.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Get_Grau.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.Get_Grau.Location = new System.Drawing.Point(14, 53);
+            this.Get_Grau.Name = "Get_Grau";
+            this.Get_Grau.Size = new System.Drawing.Size(116, 33);
+            this.Get_Grau.TabIndex = 14;
+            this.Get_Grau.Text = "GetGrau";
+            this.Get_Grau.UseVisualStyleBackColor = false;
+            this.Get_Grau.Click += new System.EventHandler(this.Get_Grau_Click);
             // 
             // List_vertices
             // 
+            this.List_vertices.ColumnWidth = 50;
+            this.List_vertices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.List_vertices.FormattingEnabled = true;
-            this.List_vertices.Location = new System.Drawing.Point(228, 12);
+            this.List_vertices.ItemHeight = 20;
+            this.List_vertices.Location = new System.Drawing.Point(272, 154);
             this.List_vertices.Name = "List_vertices";
-            this.List_vertices.Size = new System.Drawing.Size(441, 407);
+            this.List_vertices.Size = new System.Drawing.Size(202, 284);
             this.List_vertices.TabIndex = 27;
+            this.List_vertices.Visible = false;
             // 
             // label1
             // 
@@ -277,7 +292,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
-            this.label3.Location = new System.Drawing.Point(7, 31);
+            this.label3.Location = new System.Drawing.Point(7, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 25);
             this.label3.TabIndex = 30;
@@ -287,7 +302,7 @@
             // 
             this.tipo_grafo.AutoSize = true;
             this.tipo_grafo.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
-            this.tipo_grafo.Location = new System.Drawing.Point(68, 32);
+            this.tipo_grafo.Location = new System.Drawing.Point(56, 92);
             this.tipo_grafo.Name = "tipo_grafo";
             this.tipo_grafo.Size = new System.Drawing.Size(75, 25);
             this.tipo_grafo.TabIndex = 31;
@@ -297,7 +312,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
-            this.label5.Location = new System.Drawing.Point(8, 63);
+            this.label5.Location = new System.Drawing.Point(8, 124);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 25);
             this.label5.TabIndex = 32;
@@ -307,7 +322,7 @@
             // 
             this.quant_vertices.AutoSize = true;
             this.quant_vertices.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
-            this.quant_vertices.Location = new System.Drawing.Point(88, 63);
+            this.quant_vertices.Location = new System.Drawing.Point(88, 124);
             this.quant_vertices.Name = "quant_vertices";
             this.quant_vertices.Size = new System.Drawing.Size(75, 25);
             this.quant_vertices.TabIndex = 33;
@@ -317,7 +332,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
-            this.label7.Location = new System.Drawing.Point(7, 93);
+            this.label7.Location = new System.Drawing.Point(7, 154);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 25);
             this.label7.TabIndex = 34;
@@ -327,11 +342,72 @@
             // 
             this.quant_arestas.AutoSize = true;
             this.quant_arestas.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
-            this.quant_arestas.Location = new System.Drawing.Point(86, 93);
+            this.quant_arestas.Location = new System.Drawing.Point(86, 154);
             this.quant_arestas.Name = "quant_arestas";
             this.quant_arestas.Size = new System.Drawing.Size(87, 25);
             this.quant_arestas.TabIndex = 35;
             this.quant_arestas.Text = "QuantAres";
+            // 
+            // selecione_label
+            // 
+            this.selecione_label.AutoSize = true;
+            this.selecione_label.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
+            this.selecione_label.Location = new System.Drawing.Point(312, 126);
+            this.selecione_label.Name = "selecione_label";
+            this.selecione_label.Size = new System.Drawing.Size(149, 25);
+            this.selecione_label.TabIndex = 36;
+            this.selecione_label.Text = "Selecione um vétice";
+            this.selecione_label.Visible = false;
+            // 
+            // metodo_label
+            // 
+            this.metodo_label.AutoSize = true;
+            this.metodo_label.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
+            this.metodo_label.Location = new System.Drawing.Point(294, 275);
+            this.metodo_label.Name = "metodo_label";
+            this.metodo_label.Size = new System.Drawing.Size(158, 25);
+            this.metodo_label.TabIndex = 37;
+            this.metodo_label.Text = "Selecione um método";
+            // 
+            // btn_geral
+            // 
+            this.btn_geral.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_geral.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_geral.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.btn_geral.Location = new System.Drawing.Point(327, 444);
+            this.btn_geral.Name = "btn_geral";
+            this.btn_geral.Size = new System.Drawing.Size(116, 33);
+            this.btn_geral.TabIndex = 39;
+            this.btn_geral.Text = "variavel";
+            this.btn_geral.UseVisualStyleBackColor = false;
+            this.btn_geral.Click += new System.EventHandler(this.btn_geral_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(17, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(42, 33);
+            this.button1.TabIndex = 40;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
+            this.label2.Location = new System.Drawing.Point(66, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(282, 25);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Clique para retornar ao menu principal";
             // 
             // MenuGNaoDirigido
             // 
@@ -339,6 +415,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(846, 580);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_geral);
+            this.Controls.Add(this.metodo_label);
+            this.Controls.Add(this.selecione_label);
             this.Controls.Add(this.quant_arestas);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.quant_vertices);
@@ -370,11 +451,11 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button IsNulo;
+        private System.Windows.Forms.Button IsRegular;
+        private System.Windows.Forms.Button IsPendente;
+        private System.Windows.Forms.Button Is_isolado;
+        private System.Windows.Forms.Button Get_Grau;
         private System.Windows.Forms.ListBox List_vertices;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label endereco;
@@ -384,5 +465,10 @@
         private System.Windows.Forms.Label quant_vertices;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label quant_arestas;
+        private System.Windows.Forms.Label selecione_label;
+        private System.Windows.Forms.Label metodo_label;
+        private System.Windows.Forms.Button btn_geral;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
     }
 }

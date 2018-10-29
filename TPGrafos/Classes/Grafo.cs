@@ -21,6 +21,7 @@ namespace TPGrafos.Classes
         {
             return GeraGrafo(arquivo);
         }
+
         public Grafo(ListaVertice vertices, ListaAresta arestas)
         {
             this.vertices = vertices;
@@ -101,7 +102,6 @@ namespace TPGrafos.Classes
                     else
                     { vertices.BuscarVertice(auxA.Destino).Arestas.Adicionar(auxA); }
                 }
-                
                 return g = new GDirigido(vertices, arestas);
             }
             else //Não é orientado
