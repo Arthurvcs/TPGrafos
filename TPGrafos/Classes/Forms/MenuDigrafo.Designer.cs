@@ -82,6 +82,7 @@
             resources.ApplyResources(this.GetGrauEntrada_btn, "GetGrauEntrada_btn");
             this.GetGrauEntrada_btn.Name = "GetGrauEntrada_btn";
             this.GetGrauEntrada_btn.UseVisualStyleBackColor = false;
+            this.GetGrauEntrada_btn.Click += new System.EventHandler(this.GetGrauEntrada_btn_Click);
             // 
             // vertices_listBox
             // 
@@ -163,6 +164,7 @@
             resources.ApplyResources(this.geral_btn, "geral_btn");
             this.geral_btn.Name = "geral_btn";
             this.geral_btn.UseVisualStyleBackColor = false;
+            this.geral_btn.Click += new System.EventHandler(this.geral_btn_Click);
             // 
             // MenuDigrafo
             // 

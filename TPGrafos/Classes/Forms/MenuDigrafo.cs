@@ -67,5 +67,25 @@ namespace TPGrafos
             { MessageBox.Show("O grafo não possui ciclo.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Warning); }
             this.metodo_label.Visible = true;
         }
+
+        private void GetGrauEntrada_btn_Click(object sender, EventArgs e)
+        {
+            this.metodo = "GETGRAUENTRADA";
+            metodo_label.Visible = false;
+            vertices_listBox.Visible = true;
+            selecione_label.Visible = true;
+            this.geral_btn.Visible = true;
+            this.geral_btn.Text = "Verificar o grau";
+            selecione_label.Text = "Selecione o vértice desejado";
+        }
+
+        private void geral_btn_Click(object sender, EventArgs e)
+        {
+            if (metodo == "GETGRAUENTRADA")
+            {
+                Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
+                MessageBox.Show("O vértice " + vertices_listBox.SelectedItem.ToString() + " possui grau de entrada: " + g.GetGrauEntrada(aux).ToString(), this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
     }
 }
