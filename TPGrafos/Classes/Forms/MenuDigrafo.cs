@@ -11,12 +11,11 @@ using TPGrafos.Classes;
 
 namespace TPGrafos
 {
-    partial class Digrafo : Form
+    partial class MenuDigrafo : Form
     {
-        private GDirigido g;
-        string metodo = "";
+        private GDirigido g; 
 
-        public Digrafo(GDirigido g)
+        public MenuDigrafo(GDirigido g)
         {
             InitializeComponent();
             this.g = g;

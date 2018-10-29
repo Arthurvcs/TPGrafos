@@ -1,6 +1,6 @@
 ﻿namespace TPGrafos
 {
-    partial class Digrafo
+    partial class MenuDigrafo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Digrafo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuDigrafo));
             this.MainPanel = new System.Windows.Forms.Panel();
             this.HasCiclo_btn = new System.Windows.Forms.Button();
             this.GetGrauSaida_btn = new System.Windows.Forms.Button();

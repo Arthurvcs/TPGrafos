@@ -45,7 +45,7 @@ namespace TPGrafos
                 {
                     g = (GDirigido)g.GetGrafo(biblioteca.OpenFile());
 
-                    Digrafo MenuGDirigido = new Digrafo((GDirigido)g);
+                    MenuDigrafo MenuGDirigido = new MenuDigrafo((GDirigido)g);
                     this.Hide();
                     MenuGDirigido.ShowDialog();
                     this.Close();
