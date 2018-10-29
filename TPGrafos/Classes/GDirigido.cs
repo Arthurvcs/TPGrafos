@@ -99,7 +99,7 @@ namespace TPGrafos.Classes
         {
             Elemento vStart = this.vertices.pri.Prox;
 
-            int[] visitados = new int[this.vertices.Tamanho];
+            int[] visitados = new int[(this.vertices.Tamanho - 1)];
             int visitaCount = 0;
 
             Elemento auxV = this.vertices.pri.Prox;
@@ -141,7 +141,7 @@ namespace TPGrafos.Classes
                 {
                     if (visitados.Contains(auxA.Destino.Nome))
                     {
-                        if ((visitaCount+1) == visitados.Length && auxA.Destino.Equals((Vertice)vStart.Dados))
+                        if ((visitaCount) == visitados.Length && auxA.Destino.Equals((Vertice)vStart.Dados))
                         {
                             return true;
                         }
@@ -165,7 +165,7 @@ namespace TPGrafos.Classes
 
                     if (visitados.Contains(auxA.Destino.Nome))
                     {
-                        if ((visitaCount + 1) == visitados.Length && auxA.Destino.Equals((Vertice)vStart.Dados))
+                        if ((visitaCount) == visitados.Length && auxA.Destino.Equals((Vertice)vStart.Dados))
                         {
                             return true;
                         }
