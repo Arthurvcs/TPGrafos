@@ -229,5 +229,11 @@ namespace TPGrafos
             main.ShowDialog();
             this.Close();
         }
+
+        private void GetComplementar_btn_Click(object sender, EventArgs e)
+        {
+            if(g.GetComplementar() == g)
+            { MessageBox.Show("O grafo não possui complementar, pois já é completo"); }
+        }
     }
 }

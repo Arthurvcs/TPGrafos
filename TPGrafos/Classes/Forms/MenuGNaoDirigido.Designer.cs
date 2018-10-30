@@ -144,6 +144,7 @@
             this.GetComplementar_btn.TabIndex = 23;
             this.GetComplementar_btn.Text = "GetComplementar";
             this.GetComplementar_btn.UseVisualStyleBackColor = false;
+            this.GetComplementar_btn.Click += new System.EventHandler(this.GetComplementar_btn_Click);
             // 
             // IsUnicursal_btn
             // 

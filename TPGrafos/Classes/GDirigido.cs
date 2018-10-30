@@ -89,15 +89,9 @@ namespace TPGrafos.Classes
             return grauSaida;
         }
 
-        public struct Vertex
-        {
-            public Vertice vertice;
-            public int cor;
-        }
-
         public bool HasCiclo()
         {
-            Elemento vStart = this.vertices.pri.Prox;
+            Elemento vStart = vertices.pri.Prox;
 
             int[] visitados = new int[(this.vertices.Tamanho - 1)];
             int visitaCount = 0;
@@ -115,11 +109,6 @@ namespace TPGrafos.Classes
             auxV = vStart;
             int fimBusca = 0;
             Vertice auxVx = (Vertice)auxV.Dados;
-
-            //for (int i = 0; i < vertexes.Length; i++)
-            //{
-
-            //}
 
             while (fimBusca == 0)
             {

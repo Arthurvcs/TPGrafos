@@ -12,10 +12,6 @@ namespace TPGrafos.Classes
     {
         public GNaoDirigido() { }
 
-        //public GNaoDirigido Grafo(Stream arquivo)
-        //{
-        //    return (GNaoDirigido)GeraGrafo(arquivo);
-        //}
         public GNaoDirigido(ListaVertice vertices, ListaAresta arestas) : base(vertices, arestas)
         {
             this.vertices = vertices;
@@ -133,7 +129,7 @@ namespace TPGrafos.Classes
                 {
                     for (int i = 0; i < aux.Length - 1; i++)
                     {
-                        if (!IsAdjacente(aux[pos], aux[i+1]))
+                        if (!IsAdjacente(aux[pos], aux[i + 1]))
                         {
                             return false;
                         }
@@ -146,13 +142,54 @@ namespace TPGrafos.Classes
                 return false;
         }
 
-        //public bool IsConexo(){}
+        //public bool IsConexo() { }
 
         //public bool IsEuleriano(){}
 
         //public bool IsUnicursal(){}
 
-        //public GNaoDirigido GetComplementar(){}
+        public GNaoDirigido GetComplementar()
+        {
+
+            GNaoDirigido Gcomplementar;
+            ListaVertice verticesAux = new ListaVertice();
+            ListaAresta arestasAux = new ListaAresta();
+
+            if (IsCompleto())
+            { return this; }
+
+            else
+            {
+                int pos = 0;
+                Vertice[] aux = vertices.GeraVetor();
+
+                while (pos < aux.Length)
+                {
+                    for (int i = 0; i < aux.Length - 1; i++)
+                    {
+                        if (!IsAdjacente(aux[pos], aux[i + 1]))
+                        {
+
+                            verticesAux.Adicionar(aux[pos]);
+                            verticesAux.Adicionar(aux[i + 1]);
+
+                            Vertice auxVo = vertices.BuscarVertice(aux[pos]);
+                            Vertice auxVd = vertices.BuscarVertice(aux[i+1]);
+
+
+                            Aresta auxA = new Aresta(aux[pos], aux[i + 1], 0);
+                            arestasAux.Adicionar(auxA);
+
+                            vertices.BuscarVertice(auxA.Origem).Arestas.Adicionar(auxA);
+                            vertices.BuscarVertice(auxA.Destino).Arestas.Adicionar(auxA);
+                        }
+                    }
+                    pos++;
+                }
+                Gcomplementar = new GNaoDirigido(verticesAux, arestasAux);
+                return Gcomplementar;
+            }           
+        }
 
         //public GNaoDirigido GetAGMPrim(Vertice v1){}
 
