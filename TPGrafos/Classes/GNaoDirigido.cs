@@ -131,9 +131,9 @@ namespace TPGrafos.Classes
 
                 while (pos < aux.Length)
                 {
-                    for (int i = 0; i < aux.Length; i++)
+                    for (int i = 0; i < aux.Length - 1; i++)
                     {
-                        if (!IsAdjacente(aux[pos], aux[i]))
+                        if (!IsAdjacente(aux[pos], aux[i+1]))
                         {
                             return false;
                         }
