@@ -124,21 +124,21 @@ namespace TPGrafos.Classes
             //verificando o primeiro teorema 
             //O número de arestas de um grafo completo é n(n-1)/2 
             int teorema = (vertices.Tamanho * (vertices.Tamanho - 1)) / 2;
-            if (this.Arestas.Tamanho == teorema)
+            if (this.Arestas.Tamanho == teorema)//Verificar se o teorema atende as condições
             {
-                Elemento aux = this.Vertices.pri.Prox;
+                int pos = 0;
+                Vertice[] aux = vertices.GeraVetor();
 
-                while (aux.Prox != null)
+                while (pos < aux.Length)
                 {
-                    Vertice aux1 = (Vertice)aux.Dados;
-                    Vertice aux2 = (Vertice)aux.Prox.Dados;
-
-                    if (this.IsAdjacente(aux1, aux2))//Verifica se a posição atual e próximo são adjacentes
+                    for (int i = 0; i < aux.Length; i++)
                     {
-                        aux = aux.Prox;
+                        if (!IsAdjacente(aux[pos], aux[i]))
+                        {
+                            return false;
+                        }
                     }
-                    else
-                        return false;
+                    pos++;
                 }
                 return true;
             }
