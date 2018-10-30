@@ -47,11 +47,15 @@ namespace TPGrafos.Classes
         {
             string[] linhas = arquivo.Replace("\r", "").Split('\n');
             if (linhas.Length == 1)
-            { this.digrafo = false; }
+            { this.digrafo = false; return; }
+
             linhas = linhas[1].Replace("\r", "").Split('\n', ';');
 
-            if (linhas.Length == 3) { this.digrafo = false; }
-            else { this.digrafo = true; }
+            if (linhas.Length == 3)
+            { this.digrafo = false; }
+
+            if (linhas.Length == 4)
+            { this.digrafo = true; }
         }
 
         /// <summary>
@@ -155,7 +159,7 @@ namespace TPGrafos.Classes
                     else
                     { vertices.BuscarVertice(auxA.Destino).Arestas.Adicionar(auxA); }
                 }
-                return g = new GNaoDirigido(vertices, arestas, this.digrafo);
+                return g = new GNaoDirigido(vertices, arestas);
             }
         }
 

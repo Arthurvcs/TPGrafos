@@ -43,12 +43,12 @@ namespace TPGrafos
         {
             if (metodo == "GETGRAUENTRADA")
             {
-                Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
+                Vertice aux = g.Vertices.BuscarVertice(new Vertice(Convert.ToInt32((vertices_listBox.SelectedItem))));
                 MessageBox.Show("O vértice " + vertices_listBox.SelectedItem.ToString() + " possui grau de entrada: " + g.GetGrauEntrada(aux).ToString(), this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             if (metodo == "GETGRAUSAIDA")
             {
-                Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
+                Vertice aux = g.Vertices.BuscarVertice(new Vertice(Convert.ToInt32((vertices_listBox.SelectedItem))));
                 MessageBox.Show("O vértice " + vertices_listBox.SelectedItem.ToString() + " possui grau de saída: " + g.GetGrauSaida(aux).ToString(), this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
 

@@ -10,7 +10,7 @@ namespace TPGrafos.Classes
 {
     class GNaoDirigido : Grafo
     {
-        public GNaoDirigido(){}
+        public GNaoDirigido() { }
 
         //public GNaoDirigido Grafo(Stream arquivo)
         //{
@@ -20,15 +20,8 @@ namespace TPGrafos.Classes
         {
             this.vertices = vertices;
             this.arestas = arestas;
+            this.digrafo = false;
         }
-
-        public GNaoDirigido(ListaVertice vertices, ListaAresta arestas, bool _digrafo) : base(vertices, arestas, _digrafo)
-        {
-            this.vertices = vertices;
-            this.arestas = arestas;
-            this.digrafo = _digrafo;
-        }
-
         /// <summary>
         /// Um vertice é adjacente a outro caso haja uma aresta que o liga com outro vértice
         /// </summary>
@@ -52,7 +45,7 @@ namespace TPGrafos.Classes
         /// <param name="v1">Vértice informado pelo usuário</param>
         /// <returns>O grau de um determinado vértice</returns>
         public int GetGrau(Vertice v1)
-        { return vertices.BuscarVertice(v1).Arestas.Tamanho;}
+        { return vertices.BuscarVertice(v1).Arestas.Tamanho; }
 
         /// <summary>
         /// Um vértice é considerado isolado, caso seu grau seja igual a 0
@@ -77,7 +70,8 @@ namespace TPGrafos.Classes
         /// true: é pendente
         /// false: não é pendente
         /// </returns>
-        public bool IsPendente(Vertice v1) {
+        public bool IsPendente(Vertice v1)
+        {
             if (GetGrau(v1) == 1)
             { return true; }
             else return false;
@@ -86,7 +80,8 @@ namespace TPGrafos.Classes
         /// Um grafo no qual todos os vértices possuem o mesmo grau é chamado de grafo regular
         /// </summary>
         /// <returns></returns>
-        public bool IsRegular() {
+        public bool IsRegular()
+        {
 
             Elemento auxE = vertices.pri.Prox;
             while (auxE.Prox != null)
@@ -105,19 +100,51 @@ namespace TPGrafos.Classes
         /// true: O grafo é nulo
         /// False: O grafo não é nulo
         /// </returns>
-        public bool IsNulo(){
+        public bool IsNulo()
+        {
 
             Elemento auxE = vertices.pri.Prox;
             while (auxE.Prox != null)
             {
-                if (IsIsolado((Vertice)auxE.Dados)== false)
-                { return false; }               
+                if (IsIsolado((Vertice)auxE.Dados) == false)
+                { return false; }
                 auxE = auxE.Prox;
             }
             return true;
         }
+        /// <summary>
+        /// Um grafo é dito completo se para cada par de vertices existe uma aresta
+        /// </summary>
+        /// <returns>
+        /// true: o grafo é completo
+        /// false: o grafo não é completo
+        /// </returns>
+        public bool IsCompleto()
+        {
+            //verificando o primeiro teorema 
+            //O número de arestas de um grafo completo é n(n-1)/2 
+            int teorema = (vertices.Tamanho * (vertices.Tamanho - 1)) / 2;
+            if (this.Arestas.Tamanho == teorema)
+            {
+                Elemento aux = this.Vertices.pri.Prox;
 
-        //public bool IsCompleto(){}
+                while (aux.Prox != null)
+                {
+                    Vertice aux1 = (Vertice)aux.Dados;
+                    Vertice aux2 = (Vertice)aux.Prox.Dados;
+
+                    if (this.IsAdjacente(aux1, aux2))//Verifica se a posição atual e próximo são adjacentes
+                    {
+                        aux = aux.Prox;
+                    }
+                    else
+                        return false;
+                }
+                return true;
+            }
+            else
+                return false;
+        }
 
         //public bool IsConexo(){}
 

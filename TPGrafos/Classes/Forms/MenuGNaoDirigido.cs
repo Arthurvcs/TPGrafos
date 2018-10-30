@@ -17,11 +17,22 @@ namespace TPGrafos
         private GNaoDirigido g;
         string metodo = "";
 
+        private void setBoxPosition()
+        {
+            this.vertices_listBox.Location = new Point(272, 154);
+            this.selecione_label.Location = new Point(303, 126);
+        }
+
         public MenuGNaoDirigido(GNaoDirigido g)
         {
             InitializeComponent();
             this.g = g;
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.list_vertices_secundaria.Visible = false;
+
+            this.list_vertices_secundaria.Visible = false;
+            this.selecione_label_secundaria.Visible = false;
+
             Vertice[] aux = g.Vertices.GeraVetor();
 
             for (int i = 0; i < aux.Length; i++)
@@ -40,26 +51,39 @@ namespace TPGrafos
             this.quant_vertices_label.Text = g.Vertices.Tamanho.ToString();
             this.tipo_grafo_label.Text = "Não dirigido";
             this.geral_btn.Visible = false;
-
             Vertice[] aux = g.Vertices.GeraVetor();
 
             for (int i = 0; i < aux.Length; i++)
             {
                 this.vertices_listBox.Items.Add(aux[i].Nome.ToString());
+                this.list_vertices_secundaria.Items.Add(aux[i].Nome.ToString());
             }
+            this.list_vertices_secundaria.SelectedIndex = 0;
+            this.vertices_listBox.SelectedIndex = 0;
+
         }
 
         public GNaoDirigido grafo { get { return this.g; } set { this.g = value; } }
 
         private void IsAdjacente_Click(object sender, EventArgs e)
         {
-            //List_vertices.Visible = true;
-            //List_vertices.SelectionMode = SelectionMode.MultiSimple;
-            //selecione_label.Text = "Selecione dois vértices";
-            //selecione_label.Visible = true;
-            //metodo_label.Visible = false;
 
-            //g.IsAdjacente(g.Vertices.Buscar()
+            this.metodo = "ISADJACENTE";
+            //this.vertices_listBox.Location = new Point(188, 154);
+            ////this.selecione_label_secundaria.Location = new Point(209, 124);
+            //this.selecione_label_secundaria.Visible = true;
+            //this.selecione_label.Visible = true;
+
+            //this.metodo_label.Visible = false;
+
+            //this.geral_btn.Visible = true;
+            //this.geral_btn.Text = "Verificar";
+
+            //this.list_vertices_secundaria.Visible = true;
+            //this.vertices_listBox.Visible = true;
+            //this.selecione_label.Visible = true;
+            //this.selecione_label_secundaria.Visible = true;
+            //this.selecione_label_secundaria.Location = new Point(209, 124);
 
         }
 
@@ -77,7 +101,6 @@ namespace TPGrafos
                 { MessageBox.Show("O vértice é isolado.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
                 else
                 { MessageBox.Show("O vértice não é isolado.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Warning); }
-
             }
             if (metodo == "ISPENDENTE")
             {
@@ -86,18 +109,27 @@ namespace TPGrafos
                 { MessageBox.Show("O vértice é pendente.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
                 else
                 { MessageBox.Show("O vértice não é pendente.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+            }
+            if (metodo == "ISADJACENTE")
+            {
+                Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
+                Vertice aux2 = new Vertice(Convert.ToInt32(list_vertices_secundaria.SelectedItem));
 
+                if (g.IsAdjacente(aux, aux2))
+                { MessageBox.Show("Os vértices " + vertices_listBox.SelectedItem.ToString() + " e " + list_vertices_secundaria.SelectedItem.ToString() + " são adjacentes", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
+                else
+                { MessageBox.Show("Os vértices " + vertices_listBox.SelectedItem.ToString() + " e " + list_vertices_secundaria.SelectedItem.ToString() + " não são adjacentes", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Warning); }
             }
 
             vertices_listBox.Visible = false;
+            list_vertices_secundaria.Visible = false;
+            selecione_label_secundaria.Visible = false;
             selecione_label.Visible = false;
             metodo_label.Visible = false;
             this.geral_btn.Visible = false;
             this.geral_btn.Text = "Verificar o grau";
             this.metodo = "";
             this.metodo_label.Visible = true;
-
-
         }
 
         private void Get_Grau_Click(object sender, EventArgs e)
@@ -132,20 +164,30 @@ namespace TPGrafos
 
         }
         /// <summary>
-        /// Configuração do botão para 
+        /// Configuração do botão para verificar se o grafo é nulo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void IsNulo_Click(object sender, EventArgs e)
         {
             this.metodo = "ISNULO";
-            HabilitarVizualizacao();
+            DesabilitarVizualizacao();
 
-            Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
             if (g.IsNulo())
             { MessageBox.Show("O grafo é nulo.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
             else
             { MessageBox.Show("O grafo não é nulo.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+            this.metodo_label.Visible = true;
+        }
+        private void IsCompleto_btn_Click(object sender, EventArgs e)
+        {
+            this.metodo = "ISCOMPLETO";
+            DesabilitarVizualizacao();
+
+            if (g.IsCompleto())
+            { MessageBox.Show("O grafo é completo.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
+            else
+            { MessageBox.Show("O grafo não é completo.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Warning); }
             this.metodo_label.Visible = true;
         }
 
@@ -159,7 +201,7 @@ namespace TPGrafos
             selecione_label.Visible = true;
             this.geral_btn.Visible = true;
             this.geral_btn.Text = "Verificar o grau";
-            selecione_label.Text = "Selecione o vértice desejado";
+            selecione_label.Text = "Selecione um vértice";
         }
         /// <summary>
         /// Método responsável para limpar o form atual
@@ -167,6 +209,7 @@ namespace TPGrafos
         private void DesabilitarVizualizacao()
         {
             vertices_listBox.Visible = false;
+            list_vertices_secundaria.Visible = false;
             selecione_label.Visible = false;
             metodo_label.Visible = false;
             this.geral_btn.Visible = false;

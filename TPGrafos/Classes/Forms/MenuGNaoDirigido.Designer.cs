@@ -58,6 +58,8 @@
             this.geral_btn = new System.Windows.Forms.Button();
             this.retona_btn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.list_vertices_secundaria = new System.Windows.Forms.ListBox();
+            this.selecione_label_secundaria = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,6 +192,7 @@
             this.IsCompleto_btn.TabIndex = 19;
             this.IsCompleto_btn.Text = "IsCompleto";
             this.IsCompleto_btn.UseVisualStyleBackColor = false;
+            this.IsCompleto_btn.Click += new System.EventHandler(this.IsCompleto_btn_Click);
             // 
             // IsNulo_btn
             // 
@@ -262,7 +265,7 @@
             this.vertices_listBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vertices_listBox.FormattingEnabled = true;
             this.vertices_listBox.ItemHeight = 20;
-            this.vertices_listBox.Location = new System.Drawing.Point(272, 154);
+            this.vertices_listBox.Location = new System.Drawing.Point(188, 154);
             this.vertices_listBox.Name = "vertices_listBox";
             this.vertices_listBox.Size = new System.Drawing.Size(202, 284);
             this.vertices_listBox.TabIndex = 27;
@@ -352,7 +355,7 @@
             // 
             this.selecione_label.AutoSize = true;
             this.selecione_label.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
-            this.selecione_label.Location = new System.Drawing.Point(303, 126);
+            this.selecione_label.Location = new System.Drawing.Point(209, 124);
             this.selecione_label.Name = "selecione_label";
             this.selecione_label.Size = new System.Drawing.Size(149, 25);
             this.selecione_label.TabIndex = 36;
@@ -410,12 +413,37 @@
             this.label2.TabIndex = 41;
             this.label2.Text = "Clique para retornar ao menu principal";
             // 
+            // list_vertices_secundaria
+            // 
+            this.list_vertices_secundaria.ColumnWidth = 50;
+            this.list_vertices_secundaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.list_vertices_secundaria.FormattingEnabled = true;
+            this.list_vertices_secundaria.ItemHeight = 20;
+            this.list_vertices_secundaria.Location = new System.Drawing.Point(421, 154);
+            this.list_vertices_secundaria.Name = "list_vertices_secundaria";
+            this.list_vertices_secundaria.Size = new System.Drawing.Size(202, 284);
+            this.list_vertices_secundaria.TabIndex = 42;
+            this.list_vertices_secundaria.Visible = false;
+            // 
+            // selecione_label_secundaria
+            // 
+            this.selecione_label_secundaria.AutoSize = true;
+            this.selecione_label_secundaria.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
+            this.selecione_label_secundaria.Location = new System.Drawing.Point(446, 126);
+            this.selecione_label_secundaria.Name = "selecione_label_secundaria";
+            this.selecione_label_secundaria.Size = new System.Drawing.Size(149, 25);
+            this.selecione_label_secundaria.TabIndex = 43;
+            this.selecione_label_secundaria.Text = "Selecione um vétice";
+            this.selecione_label_secundaria.Visible = false;
+            // 
             // MenuGNaoDirigido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(846, 580);
+            this.Controls.Add(this.selecione_label_secundaria);
+            this.Controls.Add(this.list_vertices_secundaria);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.retona_btn);
             this.Controls.Add(this.geral_btn);
@@ -471,5 +499,7 @@
         private System.Windows.Forms.Button geral_btn;
         private System.Windows.Forms.Button retona_btn;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox list_vertices_secundaria;
+        private System.Windows.Forms.Label selecione_label_secundaria;
     }
 }
