@@ -232,8 +232,27 @@ namespace TPGrafos
 
         private void GetComplementar_btn_Click(object sender, EventArgs e)
         {
-            if(g.GetComplementar() == g)
+            GNaoDirigido gc = g.GetComplementar();
+            string textV = "";
+            string textA = "";
+            if (gc == g)
             { MessageBox.Show("O grafo não possui complementar, pois já é completo"); }
+            else
+            {
+                Vertice[] aux = gc.Vertices.GeraVetor();
+                Aresta[] aux2 = gc.Arestas.GeraVetor();
+
+                for (int i = 0; i < aux.Length; i++)
+                { textV += aux[i].Nome + "\n"; }
+
+                for (int i = 0; i < aux2.Length; i++)
+                { textA += aux2[i].Origem.Nome.ToString()+ " - " + aux2[i].Destino.Nome.ToString()+ "\n"; }
+
+
+
+                MessageBox.Show("O grafo complementar possui: \n" + gc.Vertices.Tamanho + " vértices " +
+                       "e " + gc.Arestas.Tamanho + " arestas\n\nOs vértices são:\n" + textV + "\nAs arestas são:\n"+textA);
+            }
         }
     }
 }
