@@ -38,6 +38,34 @@ namespace TPGrafos.Classes
             set { this.arestas = value; }
         }
 
+        public Vertice[] GetAdjacentes()
+        {
+            Elemento aux = this.arestas.pri.Prox;
+            Vertice[] adj = new Vertice[this.arestas.Tamanho];
+            int pos = 0;
+
+            while(aux != null)
+            {
+                Aresta auxA = (Aresta)aux.Dados;
+
+                if (auxA.Origem.Nome == this.nome && adj.Contains(auxA.Destino) == false)
+                {
+                    adj[pos] = auxA.Destino;
+                    pos++;
+                    aux = aux.Prox;
+                }
+                else if (auxA.Destino.Nome == this.nome && adj.Contains(auxA.Origem) == false)
+                {
+                    adj[pos] = auxA.Origem;
+                    pos++;
+                    aux = aux.Prox;
+                }
+                else { aux = aux.Prox; }
+            }
+
+            return adj;
+        }
+
         public bool Equals(IDados other)
         {
             Vertice aux = (Vertice)other;

@@ -142,7 +142,14 @@ namespace TPGrafos.Classes
                 return false;
         }
 
-        //public bool IsConexo() { }
+        //public bool IsConexo()
+        //{
+        //    Vertice vAtual = (Vertice)this.vertices.pri.Prox.Dados;
+        //    Vertice vStart = (Vertice)this.vertices.pri.Prox.Dados;
+
+
+
+        //}
 
         //public bool IsEuleriano(){}
 
@@ -172,17 +179,17 @@ namespace TPGrafos.Classes
                             Vertice clone2 = new Vertice(aux[i + 1].Nome);
 
                             if (verticesAux.BuscarVertice(clone) != null)
-                            { clone = (Vertice)verticesAux.Buscar(clone);}
+                            { clone = (Vertice)verticesAux.Buscar(clone); }
 
                             if (verticesAux.BuscarVertice(clone2) != null)
-                            {clone2 = (Vertice)verticesAux.Buscar(clone2);}
+                            { clone2 = (Vertice)verticesAux.Buscar(clone2); }
 
                             Aresta auxA = new Aresta(clone, clone2, 0);
 
                             arestasAux.Adicionar(auxA);
 
                             if (verticesAux.BuscarVertice(clone) == null)
-                            {verticesAux.Adicionar(clone);}
+                            { verticesAux.Adicionar(clone); }
 
                             clone.Arestas.Adicionar(auxA);
 
