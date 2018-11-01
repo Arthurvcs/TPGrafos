@@ -11,13 +11,17 @@ namespace TPGrafos.Classes
     {
         private int nome { get; set; }
         private int grau { get; set; }
+        private string cor;
         private ListaAresta arestas;
 
-        public Vertice() { this.arestas = new ListaAresta(); }
+        public Vertice() { this.arestas = new ListaAresta();
+            this.cor = "BRANCO";
+        }
 
         public Vertice(int nome)
         {
             this.nome = nome;
+            this.cor = "BRANCO";
             this.arestas = new ListaAresta();
         }
 
@@ -31,6 +35,12 @@ namespace TPGrafos.Classes
         {
             get { return this.grau; }
             set { this.grau = value; }
+        }
+
+        public string Cor
+        {
+            get { return this.cor; }
+            set { this.cor = value; }
         }
 
         public ListaAresta Arestas {
@@ -62,8 +72,16 @@ namespace TPGrafos.Classes
                 }
                 else { aux = aux.Prox; }
             }
-
             return adj;
+        }
+
+        public void AtualizaCor()
+        {
+            if(this.cor == "BRANCO")
+            { this.cor = "CINZA"; }
+
+            else if(this.cor == "CINZA")
+            { this.cor = "PRETO"; }
         }
 
         public bool Equals(IDados other)

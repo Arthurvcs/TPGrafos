@@ -46,6 +46,5 @@ namespace TPGrafos.Classes.Estruturas
             }
             return vetor;
         }
-
     }
 }

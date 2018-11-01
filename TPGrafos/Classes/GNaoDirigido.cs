@@ -10,14 +10,21 @@ namespace TPGrafos.Classes
 {
     class GNaoDirigido : Grafo
     {
+        private int componentes;// variável usada para verificar quantas componetes conexas um grafo possui
         public GNaoDirigido() { }
 
+        /// <summary>
+        /// Construtor
+        /// </summary>
+        /// <param name="vertices">Lista de vértices</param>
+        /// <param name="arestas">Lista de arestas</param>
         public GNaoDirigido(ListaVertice vertices, ListaAresta arestas) : base(vertices, arestas)
         {
             this.vertices = vertices;
             this.arestas = arestas;
             this.digrafo = false;
         }
+
         /// <summary>
         /// Um vertice é adjacente a outro caso haja uma aresta que o liga com outro vértice
         /// </summary>
@@ -32,7 +39,7 @@ namespace TPGrafos.Classes
             if (vertices.BuscarVertice(v1).Arestas.Buscar(v2) != null)
             { return true; }
             else
-                return false;
+            { return false; }
         }
 
         /// <summary>
@@ -72,6 +79,7 @@ namespace TPGrafos.Classes
             { return true; }
             else return false;
         }
+
         /// <summary>
         /// Um grafo no qual todos os vértices possuem o mesmo grau é chamado de grafo regular
         /// </summary>
@@ -98,7 +106,6 @@ namespace TPGrafos.Classes
         /// </returns>
         public bool IsNulo()
         {
-
             Elemento auxE = vertices.pri.Prox;
             while (auxE.Prox != null)
             {
@@ -108,6 +115,7 @@ namespace TPGrafos.Classes
             }
             return true;
         }
+
         /// <summary>
         /// Um grafo é dito completo se para cada par de vertices existe uma aresta
         /// </summary>
@@ -142,19 +150,84 @@ namespace TPGrafos.Classes
                 return false;
         }
 
-        //public bool IsConexo()
-        //{
-        //    Vertice vAtual = (Vertice)this.vertices.pri.Prox.Dados;
-        //    Vertice vStart = (Vertice)this.vertices.pri.Prox.Dados;
+        /// <summary>
+        ///  Um Grafo é dito conexo caso exista pelo menos um caminho entre todos os pares de vértices de G
+        /// </summary>
+        /// <returns>
+        /// true: é conexo
+        /// false: não é conexo
+        /// </returns>
+        public bool IsConexo()
+        {
+            this.componentes = this.GetComponentes();//Verifica quantas componentes conexas possuem no grafo
+            Elemento aux = this.vertices.pri.Prox;
 
+            while (aux != null)// Verificar se não há vértices de cor branca (caso tenha algum vértice nulo)
+            {
+                if (this.vertices.BuscarVertice((Vertice)aux.Dados).Cor == "BRANCO")
+                { componentes++; }
+                aux = aux.Prox;
+            }
 
+            if (componentes > 1) // Se o grafo possuir mais de uma componente conexa, ele é desconexo
+            { return false; }
 
-        //}
+            else
+            { return true; }
+        }
 
-        //public bool IsEuleriano(){}
-
-        //public bool IsUnicursal(){}
-
+        /// <summary>
+        /// Um grafo conexo, não orientado é euleriano se, e somente se, todos os seus vértices tiverem grau par
+        /// </summary>
+        /// <returns>
+        /// true: é Euleriano
+        /// False: não é Euleriano
+        /// </returns>
+        public bool IsEuleriano()
+        {
+            if (IsConexo())
+            {
+                Elemento aux = this.vertices.pri.Prox;
+                while (aux.Prox != null)
+                {
+                    if (vertices.BuscarVertice((Vertice)aux.Dados).Arestas.Tamanho % 2 != 0)
+                    { return false; }
+                    aux = aux.Prox;
+                }
+                return false;
+            }
+            else
+            { return false; }
+        }
+       
+        /// <summary>
+        ///Em um grafo conexo G com exatamente 2K vértices de grau ímpar, existem K subgrafos disjuntos de arestas, todos eles unicursais, de maneira que juntos eles contêm todas as arestas de G
+        /// </summary>
+        /// <returns>
+        /// true : É Unicursal
+        /// False: Não é unicursal
+        /// </returns>
+        public bool IsUnicursal()
+        {
+            int Impar = 0;
+            Elemento aux = this.vertices.pri.Prox;
+            while (aux.Prox != null)
+            {
+                if (vertices.BuscarVertice((Vertice)aux.Dados).Arestas.Tamanho % 2 != 0)
+                {
+                    Impar++;
+                    if (Impar > 1)//se ele possuir mais de um vértice com grau par
+                    { return true; }
+                }
+                aux = aux.Prox;
+            }
+            return false;
+        }
+        
+        /// <summary>
+        /// Um grafo complementar é um grafo resultante de outro grafo, um grafo complementar possui vértices e arestas necessárias para tornar um grafo completo
+        /// </summary>
+        /// <returns>Um grafo complementar</returns>
         public GNaoDirigido GetComplementar()
         {
             GNaoDirigido Gcomplementar;
@@ -173,7 +246,7 @@ namespace TPGrafos.Classes
                 {
                     for (int i = 0; i < aux.Length - 1; i++)
                     {
-                        if (!IsAdjacente(aux[pos], aux[i + 1]))
+                        if (!IsAdjacente(aux[pos], aux[i + 1]))// Comparando os vértices e verificando se há adjacência entre eles
                         {
                             Vertice clone = new Vertice(aux[pos].Nome);
                             Vertice clone2 = new Vertice(aux[i + 1].Nome);
@@ -208,6 +281,58 @@ namespace TPGrafos.Classes
                 return Gcomplementar;
             }
         }
+      
+        /// <summary>
+        /// Método recursivo para simular o algortimo de busca em profundidade
+        /// </summary>
+        /// <param name="v">Vertice para ser analisado</param>
+        private void Visitar(Vertice v)
+        {
+            Vertices.BuscarVertice(v).AtualizaCor();
+            foreach (Vertice v2 in v.GetAdjacentes())
+            {
+                if (v2.Cor == "BRANCO")
+                { this.Visitar(v2); }
+            }
+            v.AtualizaCor();
+        }
+
+        /// <summary>
+        /// Método para limpar as cores do grafo, para o algoritmo de busca em profundidade
+        /// </summary>
+        private void ResetarCores()
+        {
+            Elemento aux = this.vertices.pri.Prox;
+            while (aux.Prox != null)
+            {
+                this.vertices.BuscarVertice((Vertice)aux.Dados).Cor = "BRANCO";
+                aux = aux.Prox;
+            }
+        }
+
+        /// <summary>
+        /// Método para verificar quantas componentes conexas o grafo possui
+        /// </summary>
+        /// <returns>O número total de componentes conexas de um grafo</returns>
+        private int GetComponentes()
+        {
+            int componentes = 0;
+            this.ResetarCores();
+
+            Elemento aux = this.vertices.pri.Prox;
+            while (aux.Prox != null)
+            {
+                if (this.vertices.BuscarVertice((Vertice)aux.Dados).Cor == "BRANCO")
+                {
+                    this.Visitar(this.vertices.BuscarVertice((Vertice)aux.Dados));
+                    componentes++;
+                }
+                aux = aux.Prox;
+            }
+
+            return componentes;
+        }
+
 
         //public GNaoDirigido GetAGMPrim(Vertice v1){}
 

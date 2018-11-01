@@ -157,6 +157,7 @@
             this.IsUnicursal_btn.TabIndex = 22;
             this.IsUnicursal_btn.Text = "IsUnicursal";
             this.IsUnicursal_btn.UseVisualStyleBackColor = false;
+            this.IsUnicursal_btn.Click += new System.EventHandler(this.IsUnicursal_btn_Click);
             // 
             // IsEuleriano_btn
             // 
@@ -169,6 +170,7 @@
             this.IsEuleriano_btn.TabIndex = 21;
             this.IsEuleriano_btn.Text = "IsEuleriano";
             this.IsEuleriano_btn.UseVisualStyleBackColor = false;
+            this.IsEuleriano_btn.Click += new System.EventHandler(this.IsEuleriano_btn_Click);
             // 
             // IsConexo_btn
             // 
@@ -181,6 +183,7 @@
             this.IsConexo_btn.TabIndex = 20;
             this.IsConexo_btn.Text = "IsConexo";
             this.IsConexo_btn.UseVisualStyleBackColor = false;
+            this.IsConexo_btn.Click += new System.EventHandler(this.IsConexo_btn_Click);
             // 
             // IsCompleto_btn
             // 
@@ -266,7 +269,7 @@
             this.vertices_listBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vertices_listBox.FormattingEnabled = true;
             this.vertices_listBox.ItemHeight = 20;
-            this.vertices_listBox.Location = new System.Drawing.Point(188, 154);
+            this.vertices_listBox.Location = new System.Drawing.Point(282, 154);
             this.vertices_listBox.Name = "vertices_listBox";
             this.vertices_listBox.Size = new System.Drawing.Size(202, 284);
             this.vertices_listBox.TabIndex = 27;
@@ -356,7 +359,7 @@
             // 
             this.selecione_label.AutoSize = true;
             this.selecione_label.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
-            this.selecione_label.Location = new System.Drawing.Point(209, 124);
+            this.selecione_label.Location = new System.Drawing.Point(312, 124);
             this.selecione_label.Name = "selecione_label";
             this.selecione_label.Size = new System.Drawing.Size(149, 25);
             this.selecione_label.TabIndex = 36;

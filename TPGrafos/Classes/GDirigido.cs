@@ -11,13 +11,8 @@ namespace TPGrafos.Classes
     internal class GDirigido : Grafo
     {
         public GDirigido()
-        {
-        }
+        {}
 
-        //public override Grafo GetGrafo(Stream arquivo)
-        //{
-        //    return (GDirigido)GeraGrafo(arquivo);
-        //}
         public GDirigido(ListaVertice vertices, ListaAresta arestas) : base(vertices, arestas)
         {
             this.vertices = vertices;

@@ -7,6 +7,7 @@ using System.IO;
 using TPGrafos.Classes.Estruturas;
 using System.Text.RegularExpressions;
 using TPGrafos.Classes;
+using System.Windows.Forms;
 
 namespace TPGrafos.Classes
 {
@@ -34,8 +35,17 @@ namespace TPGrafos.Classes
         /// <returns>Um array com os posições referentes ao arquivo</returns>
         public static string[] FormatarArquivo(string arquivo)
         {
-            string[] linhas = arquivo.Replace("\r", "").Split('\n',';');
-            return linhas;          
+            try
+            {
+                string[] linhas = arquivo.Replace("\r", "").Split('\n', ';');
+                return linhas;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Erro", "O arquivo informado está em um formato incorreto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Correção", "O arquivo deve seguir esse padrão: (Exemplo)\n3\n1; 2; 7\n1; 3; 3\n2; 3; 10");
+                return null;
+            }
         }
     }
 }

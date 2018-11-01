@@ -8,7 +8,7 @@ namespace TPGrafos.Classes.Estruturas
 {
     class ListaAresta : Lista
     {
-        public Aresta[] GeraVetor()
+        public Aresta[] GeraVetor()//Gerar um vetor com todas as arestas do grafo
         {
             Aresta[] vetor = new Aresta[this.Tamanho];
             Elemento aux = this.pri.Prox;

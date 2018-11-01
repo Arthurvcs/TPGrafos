@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using TPGrafos.Classes.Estruturas;
 
 namespace TPGrafos.Classes
@@ -130,35 +131,45 @@ namespace TPGrafos.Classes
             {
                 g = new GNaoDirigido();
 
-                vertices.GerarLista(int.Parse(infoGrafo[0]));
-
-                for (int i = 1; i < infoGrafo.Length; i = i + 3)
+                try
                 {
-                    //Lista de arestas
+                    vertices.GerarLista(int.Parse(infoGrafo[0]));
 
-                    Vertice auxVo = vertices.BuscarVertice(new Vertice(Convert.ToInt32(infoGrafo[i])));
-                    Vertice auxVd = vertices.BuscarVertice(new Vertice(Convert.ToInt32(infoGrafo[i + 1])));
-
-
-                    Aresta auxA = new Aresta(auxVo, auxVd, int.Parse(infoGrafo[i + 2]));
-                    arestas.Adicionar(auxA);
-
-                    if (vertices.Buscar(auxA.Origem) == null)
+                    for (int i = 1; i < infoGrafo.Length; i = i + 3)
                     {
-                        vertices.Adicionar(auxA.Origem);
-                        vertices.BuscarAdicionarOrigem(auxA);
-                    }
-                    else
-                    { vertices.BuscarVertice(auxA.Origem).Arestas.Adicionar(auxA); }
+                        //Lista de arestas
 
-                    if (vertices.Buscar(auxA.Destino) == null)
-                    {
-                        vertices.Adicionar(auxA.Destino);
-                        vertices.BuscarAdicionarDestino(auxA);
+                        Vertice auxVo = vertices.BuscarVertice(new Vertice(Convert.ToInt32(infoGrafo[i])));
+                        Vertice auxVd = vertices.BuscarVertice(new Vertice(Convert.ToInt32(infoGrafo[i + 1])));
+
+
+                        Aresta auxA = new Aresta(auxVo, auxVd, int.Parse(infoGrafo[i + 2]));
+                        arestas.Adicionar(auxA);
+
+                        if (vertices.Buscar(auxA.Origem) == null)
+                        {
+                            vertices.Adicionar(auxA.Origem);
+                            vertices.BuscarAdicionarOrigem(auxA);
+                        }
+                        else
+                        { vertices.BuscarVertice(auxA.Origem).Arestas.Adicionar(auxA); }
+
+                        if (vertices.Buscar(auxA.Destino) == null)
+                        {
+                            vertices.Adicionar(auxA.Destino);
+                            vertices.BuscarAdicionarDestino(auxA);
+                        }
+                        else
+                        { vertices.BuscarVertice(auxA.Destino).Arestas.Adicionar(auxA); }
                     }
-                    else
-                    { vertices.BuscarVertice(auxA.Destino).Arestas.Adicionar(auxA); }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("O arquivo informado está em um formato incorreto", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("O arquivo deve seguir esse padrão: (Exemplo)\n3\n1; 2; 7\n1; 3; 3\n2; 3; 10", "Correção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+
                 return g = new GNaoDirigido(vertices, arestas);
             }
         }
