@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using TPGrafos.Classes.Estruturas;
 
 namespace TPGrafos.Classes
@@ -11,60 +7,51 @@ namespace TPGrafos.Classes
     {
         private int nome { get; set; }
         private int grau { get; set; }
-        private string cor;
-        private ListaAresta arestas;
 
-        public Vertice() { this.arestas = new ListaAresta();
-            this.cor = "BRANCO";
+        public Vertice() { Arestas = new ListaAresta();
+            Cor = "BRANCO";
         }
 
         public Vertice(int nome)
         {
             this.nome = nome;
-            this.cor = "BRANCO";
-            this.arestas = new ListaAresta();
+            Cor = "BRANCO";
+            Arestas = new ListaAresta();
         }
 
         public int Nome
         {
-            get { return this.nome; }
-            set { this.nome = value; }
+            get { return nome; }
+            set { nome = value; }
         }
 
         public int Grau
         {
-            get { return this.grau; }
-            set { this.grau = value; }
+            get { return grau; }
+            set { grau = value; }
         }
 
-        public string Cor
-        {
-            get { return this.cor; }
-            set { this.cor = value; }
-        }
+        public string Cor { get; set; }
 
-        public ListaAresta Arestas {
-            get { return this.arestas; }
-            set { this.arestas = value; }
-        }
+        public ListaAresta Arestas { get; set; }
 
         public Vertice[] GetAdjacentes()
         {
-            Elemento aux = this.arestas.pri.Prox;
-            Vertice[] adj = new Vertice[this.arestas.Tamanho];
+            Elemento aux = Arestas.pri.Prox;
+            Vertice[] adj = new Vertice[Arestas.Tamanho];
             int pos = 0;
 
             while(aux != null)
             {
                 Aresta auxA = (Aresta)aux.Dados;
 
-                if (auxA.Origem.Nome == this.nome && adj.Contains(auxA.Destino) == false)
+                if (auxA.Origem.Nome == nome && adj.Contains(auxA.Destino) == false)
                 {
                     adj[pos] = auxA.Destino;
                     pos++;
                     aux = aux.Prox;
                 }
-                else if (auxA.Destino.Nome == this.nome && adj.Contains(auxA.Origem) == false)
+                else if (auxA.Destino.Nome == nome && adj.Contains(auxA.Origem) == false)
                 {
                     adj[pos] = auxA.Origem;
                     pos++;
@@ -77,17 +64,17 @@ namespace TPGrafos.Classes
 
         public void AtualizaCor()
         {
-            if(this.cor == "BRANCO")
-            { this.cor = "CINZA"; }
+            if(Cor == "BRANCO")
+            { Cor = "CINZA"; }
 
-            else if(this.cor == "CINZA")
-            { this.cor = "PRETO"; }
+            else if(Cor == "CINZA")
+            { Cor = "PRETO"; }
         }
 
         public bool Equals(IDados other)
         {
             Vertice aux = (Vertice)other;
-            if (this.nome == aux.nome)
+            if (nome == aux.nome)
             {
                 return true;
             }

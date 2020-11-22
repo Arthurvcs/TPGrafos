@@ -1,47 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TPGrafos.Classes.Estruturas;
+﻿using TPGrafos.Classes.Estruturas;
 
 namespace TPGrafos.Classes
 {
     class Aresta : IDados
     {
-        private int peso;
-        private Vertice vOrigem;
-        private Vertice vDestino;
-
         public Aresta(Vertice origem, Vertice destino, int peso)
         {
-            this.vOrigem = origem;
-            this.vDestino = destino;
-            this.peso = peso;
+            Origem = origem;
+            Destino = destino;
+            Peso = peso;
         }
 
-        public int Peso
-        {
-            get { return this.peso; }
-            set { this.peso = value; }
-        }
+        public int Peso { get; set; }
 
-        public Vertice Origem
-        {
-            get { return this.vOrigem; }
-            set { this.vOrigem = value; }
-        }
+        public Vertice Origem { get; set; }
 
-        public Vertice Destino
-        {
-            get { return this.vDestino; }
-            set { this.vDestino = value; }
-        }
+        public Vertice Destino { get; set; }
 
         public bool Equals(IDados other)
         {
             Vertice aux = (Vertice)other;
-            if (this.Origem.Nome == aux.Nome || this.Destino.Nome == aux.Nome)
+            if (Origem.Nome == aux.Nome || Destino.Nome == aux.Nome)
             {
                 return true;
             }

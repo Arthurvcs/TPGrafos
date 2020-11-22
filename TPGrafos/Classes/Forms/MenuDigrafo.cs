@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPGrafos.Classes;
 
@@ -21,17 +14,17 @@ namespace TPGrafos
             InitializeComponent();
             this.g = g;
             Vertice[] aux = g.Vertices.GeraVetor();
-            this.StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.CenterScreen;
 
-            this.endereco_label.Text = endereco;
-            this.quant_arestas_label.Text = g.Arestas.Tamanho.ToString();
-            this.quant_vertices_label.Text = g.Vertices.Tamanho.ToString();
-            this.tipo_grafo_label.Text = "Digrafo";
-            this.geral_btn.Visible = false;
+            endereco_label.Text = endereco;
+            quant_arestas_label.Text = g.Arestas.Tamanho.ToString();
+            quant_vertices_label.Text = g.Vertices.Tamanho.ToString();
+            tipo_grafo_label.Text = "Digrafo";
+            geral_btn.Visible = false;
 
             for (int i = 0; i < aux.Length; i++)//Preenchendo a listBox com os nomes dos vértices
             {
-                this.vertices_listBox.Items.Add(aux[i].Nome.ToString());
+                vertices_listBox.Items.Add(aux[i].Nome.ToString());
             }
         }
         /// <summary>
@@ -61,8 +54,8 @@ namespace TPGrafos
         /// <param name="e"></param>
         private void GetGrauEntrada_btn_Click(object sender, EventArgs e)
         {
-            this.metodo = "GETGRAUENTRADA";
-            this.HabilitarVizualizacao();
+            metodo = "GETGRAUENTRADA";
+            HabilitarVizualizacao();
         }
         /// <summary>
         /// Configuração do botão para verificar o grau de saida de um determinado vértice
@@ -71,8 +64,8 @@ namespace TPGrafos
         /// <param name="e"></param>
         private void GetGrauSaida_btn_Click(object sender, EventArgs e)
         {
-            this.metodo = "GETGRAUSAIDA";
-            this.HabilitarVizualizacao();
+            metodo = "GETGRAUSAIDA";
+            HabilitarVizualizacao();
         }
         /// <summary>
         /// Configuração do botão para verificar se um grafo possui ciclo
@@ -81,7 +74,7 @@ namespace TPGrafos
         /// <param name="e"></param>
         private void HasCiclo_btn_Click(object sender, EventArgs e)
         {
-            this.metodo = "HASCICLO";
+            metodo = "HASCICLO";
             DesabilitarVizualizacao();
 
             Vertice aux = new Vertice(Convert.ToInt32(vertices_listBox.SelectedItem));
@@ -89,7 +82,7 @@ namespace TPGrafos
             { MessageBox.Show("O grafo possui ciclo.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
             else
             { MessageBox.Show("O grafo não possui ciclo.", this.metodo, MessageBoxButtons.OK, MessageBoxIcon.Warning); }
-            this.metodo_label.Visible = true;
+            metodo_label.Visible = true;
         }
         /// <summary>
         /// Método responsável para habilitar a vizualização dos campos do form atual
@@ -99,8 +92,8 @@ namespace TPGrafos
             metodo_label.Visible = false;
             vertices_listBox.Visible = true;
             selecione_label.Visible = true;
-            this.geral_btn.Visible = true;
-            this.geral_btn.Text = "Verificar o grau";
+            geral_btn.Visible = true;
+            geral_btn.Text = "Verificar o grau";
             selecione_label.Text = "Selecione o vértice desejado";
         }
         /// <summary>
@@ -111,10 +104,10 @@ namespace TPGrafos
             vertices_listBox.Visible = false;
             selecione_label.Visible = false;
             metodo_label.Visible = false;
-            this.geral_btn.Visible = false;
-            this.geral_btn.Text = "Verificar o grau";
-            this.metodo = "";
-            this.metodo_label.Visible = true;
+            geral_btn.Visible = false;
+            geral_btn.Text = "Verificar o grau";
+            metodo = "";
+            metodo_label.Visible = true;
         }
         /// <summary>
         /// Configuração do botão para retornar para tela inicial
@@ -124,9 +117,9 @@ namespace TPGrafos
         private void retorna_btn_Click(object sender, EventArgs e)
         {
             Menu main = new Menu();
-            this.Hide();
+            Hide();
             main.ShowDialog();
-            this.Close();
+            Close();
         }
     }
 }

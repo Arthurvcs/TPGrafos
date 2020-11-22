@@ -120,6 +120,7 @@
             this.GetAGMKruskal_btn.TabIndex = 25;
             this.GetAGMKruskal_btn.Text = "GetAGMKruskal";
             this.GetAGMKruskal_btn.UseVisualStyleBackColor = false;
+            this.GetAGMKruskal_btn.Click += new System.EventHandler(this.GetAGMKruskal_btn_Click);
             // 
             // GetAGMPrim_btn
             // 
@@ -132,6 +133,7 @@
             this.GetAGMPrim_btn.TabIndex = 24;
             this.GetAGMPrim_btn.Text = "GetAGMPrim";
             this.GetAGMPrim_btn.UseVisualStyleBackColor = false;
+            this.GetAGMPrim_btn.Click += new System.EventHandler(this.GetAGMPrim_btn_Click);
             // 
             // GetComplementar_btn
             // 
@@ -281,7 +283,7 @@
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
             this.label1.Location = new System.Drawing.Point(7, 530);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 25);
+            this.label1.Size = new System.Drawing.Size(161, 25);
             this.label1.TabIndex = 28;
             this.label1.Text = "Endereço do arquivo :";
             // 
@@ -301,7 +303,7 @@
             this.label3.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
             this.label3.Location = new System.Drawing.Point(7, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 25);
+            this.label3.Size = new System.Drawing.Size(54, 25);
             this.label3.TabIndex = 30;
             this.label3.Text = "Grafo:";
             // 
@@ -321,7 +323,7 @@
             this.label5.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
             this.label5.Location = new System.Drawing.Point(8, 124);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 25);
+            this.label5.Size = new System.Drawing.Size(80, 25);
             this.label5.TabIndex = 32;
             this.label5.Text = "Vertíces : ";
             // 
@@ -341,7 +343,7 @@
             this.label7.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
             this.label7.Location = new System.Drawing.Point(7, 154);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 25);
+            this.label7.Size = new System.Drawing.Size(75, 25);
             this.label7.TabIndex = 34;
             this.label7.Text = "Arestas :";
             // 
@@ -361,7 +363,7 @@
             this.selecione_label.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
             this.selecione_label.Location = new System.Drawing.Point(312, 124);
             this.selecione_label.Name = "selecione_label";
-            this.selecione_label.Size = new System.Drawing.Size(149, 25);
+            this.selecione_label.Size = new System.Drawing.Size(151, 25);
             this.selecione_label.TabIndex = 36;
             this.selecione_label.Text = "Selecione um vétice";
             this.selecione_label.Visible = false;
@@ -372,7 +374,7 @@
             this.metodo_label.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
             this.metodo_label.Location = new System.Drawing.Point(294, 275);
             this.metodo_label.Name = "metodo_label";
-            this.metodo_label.Size = new System.Drawing.Size(158, 25);
+            this.metodo_label.Size = new System.Drawing.Size(160, 25);
             this.metodo_label.TabIndex = 37;
             this.metodo_label.Text = "Selecione um método";
             // 
@@ -413,7 +415,7 @@
             this.label2.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
             this.label2.Location = new System.Drawing.Point(66, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(282, 25);
+            this.label2.Size = new System.Drawing.Size(287, 25);
             this.label2.TabIndex = 41;
             this.label2.Text = "Clique para retornar ao menu principal";
             // 
@@ -435,7 +437,7 @@
             this.selecione_label_secundaria.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15.75F);
             this.selecione_label_secundaria.Location = new System.Drawing.Point(446, 126);
             this.selecione_label_secundaria.Name = "selecione_label_secundaria";
-            this.selecione_label_secundaria.Size = new System.Drawing.Size(149, 25);
+            this.selecione_label_secundaria.Size = new System.Drawing.Size(151, 25);
             this.selecione_label_secundaria.TabIndex = 43;
             this.selecione_label_secundaria.Text = "Selecione um vétice";
             this.selecione_label_secundaria.Visible = false;

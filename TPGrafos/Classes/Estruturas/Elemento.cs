@@ -1,33 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TPGrafos.Classes.Estruturas
 {
     class Elemento:IDados
     {
-        private Elemento prox;
-        private IDados dados;
-
         public Elemento(IDados dados)
         {
-            this.prox = null;
-            this.dados = dados;
+            Prox = null;
+            Dados = dados;
         }
 
-        public Elemento Prox
-        {
-            get { return this.prox; }
-            set { this.prox = value; }
-        }
+        public Elemento Prox { get; set; }
 
-        public IDados Dados
-        {
-            get { return this.dados; }
-            set { this.dados = value; }
-        }
+        public IDados Dados { get; set; }
 
         public bool Equals(IDados other)
         {

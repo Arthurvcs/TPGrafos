@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPGrafos.Classes;
-using System.IO;
-using TPGrafos.Classes.Estruturas;
 
 namespace TPGrafos
 {
@@ -17,9 +8,8 @@ namespace TPGrafos
     {
         public Menu()
         {
-            inicio:
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void AbirArquivo_Click(object sender, EventArgs e)
@@ -35,7 +25,7 @@ namespace TPGrafos
 
                 if (g == null)
                 {
-                    goto fim;
+                    return;
                 }
 
                 if (!g.digrafo)
@@ -43,21 +33,20 @@ namespace TPGrafos
                     g = (GNaoDirigido)g.GetGrafo(biblioteca.OpenFile());
 
                     MenuGNaoDirigido MenuGNaoDirigido = new MenuGNaoDirigido((GNaoDirigido)g, biblioteca.FileName);
-                    this.Hide();
+                    Hide();
                     MenuGNaoDirigido.ShowDialog();
-                    this.Close();
+                    Close();
                 }
                 if (g.digrafo)
                 {
                     g = (GDirigido)g.GetGrafo(biblioteca.OpenFile());
 
                     MenuDigrafo MenuGDirigido = new MenuDigrafo((GDirigido)g, biblioteca.FileName);
-                    this.Hide();
+                    Hide();
                     MenuGDirigido.ShowDialog();
-                    this.Close();
+                    Close();
                 }
             }
-        fim:;
         }
     }
 }

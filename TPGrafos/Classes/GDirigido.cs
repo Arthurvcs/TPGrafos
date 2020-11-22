@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using TPGrafos.Classes.Estruturas;
 
 namespace TPGrafos.Classes
@@ -23,7 +18,7 @@ namespace TPGrafos.Classes
         {
             this.vertices = vertices;
             this.arestas = arestas;
-            this.digrafo = _digrafo;
+            digrafo = _digrafo;
         }
 
         /// <summary>
@@ -88,10 +83,10 @@ namespace TPGrafos.Classes
         {
             Elemento vStart = vertices.pri.Prox;
 
-            int[] visitados = new int[(this.vertices.Tamanho - 1)];
+            int[] visitados = new int[(vertices.Tamanho - 1)];
             int visitaCount = 0;
 
-            Elemento auxV = this.vertices.pri.Prox;
+            Elemento auxV = vertices.pri.Prox;
 
             //for (int i = 0; i <= visitados.Length; i++)
             //{

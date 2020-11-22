@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPGrafos.Classes.Estruturas;
 
@@ -48,15 +44,15 @@ namespace TPGrafos.Classes
         {
             string[] linhas = arquivo.Replace("\r", "").Split('\n');
             if (linhas.Length == 1)
-            { this.digrafo = false; return; }
+            { digrafo = false; return; }
 
             linhas = linhas[1].Replace("\r", "").Split('\n', ';');
 
             if (linhas.Length == 3)
-            { this.digrafo = false; }
+            { digrafo = false; }
 
             if (linhas.Length == 4)
-            { this.digrafo = true; }
+            { digrafo = true; }
         }
 
         /// <summary>
@@ -125,7 +121,7 @@ namespace TPGrafos.Classes
                     else
                     { vertices.BuscarVertice(auxA.Destino).Arestas.Adicionar(auxA); }
                 }
-                return g = new GDirigido(vertices, arestas, this.digrafo);
+                return g = new GDirigido(vertices, arestas, digrafo);
             }
             else //Não é orientado
             {
@@ -163,7 +159,7 @@ namespace TPGrafos.Classes
                         { vertices.BuscarVertice(auxA.Destino).Arestas.Adicionar(auxA); }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("O arquivo informado está em um formato incorreto", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     MessageBox.Show("O arquivo deve seguir esse padrão: (Exemplo)\n3\n1; 2; 7\n1; 3; 3\n2; 3; 10", "Correção", MessageBoxButtons.OK, MessageBoxIcon.Error);

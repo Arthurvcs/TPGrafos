@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TPGrafos.Classes.Estruturas;
 
 namespace TPGrafos.Classes
@@ -22,7 +18,7 @@ namespace TPGrafos.Classes
         {
             this.vertices = vertices;
             this.arestas = arestas;
-            this.digrafo = false;
+            digrafo = false;
         }
 
         /// <summary>
@@ -128,7 +124,7 @@ namespace TPGrafos.Classes
             //verificando o primeiro teorema 
             //O número de arestas de um grafo completo é n(n-1)/2 
             int teorema = (vertices.Tamanho * (vertices.Tamanho - 1)) / 2;
-            if (this.Arestas.Tamanho == teorema)//Verificar se o teorema atende as condições
+            if (Arestas.Tamanho == teorema)//Verificar se o teorema atende as condições
             {
                 int pos = 0;
                 Vertice[] aux = vertices.GeraVetor();
@@ -159,12 +155,12 @@ namespace TPGrafos.Classes
         /// </returns>
         public bool IsConexo()
         {
-            this.componentes = this.GetComponentes();//Verifica quantas componentes conexas possuem no grafo
-            Elemento aux = this.vertices.pri.Prox;
+            componentes = GetComponentes();//Verifica quantas componentes conexas possuem no grafo
+            Elemento aux = vertices.pri.Prox;
 
             while (aux != null)// Verificar se não há vértices de cor branca (caso tenha algum vértice nulo)
             {
-                if (this.vertices.BuscarVertice((Vertice)aux.Dados).Cor == "BRANCO")
+                if (vertices.BuscarVertice((Vertice)aux.Dados).Cor == "BRANCO")
                 { componentes++; }
                 aux = aux.Prox;
             }
@@ -187,7 +183,7 @@ namespace TPGrafos.Classes
         {
             if (IsConexo())
             {
-                Elemento aux = this.vertices.pri.Prox;
+                Elemento aux = vertices.pri.Prox;
                 while (aux.Prox != null)
                 {
                     if (vertices.BuscarVertice((Vertice)aux.Dados).Arestas.Tamanho % 2 != 0)
@@ -199,7 +195,7 @@ namespace TPGrafos.Classes
             else
             { return false; }
         }
-       
+
         /// <summary>
         ///Em um grafo conexo G com exatamente 2K vértices de grau ímpar, existem K subgrafos disjuntos de arestas, todos eles unicursais, de maneira que juntos eles contêm todas as arestas de G
         /// </summary>
@@ -210,7 +206,7 @@ namespace TPGrafos.Classes
         public bool IsUnicursal()
         {
             int Impar = 0;
-            Elemento aux = this.vertices.pri.Prox;
+            Elemento aux = vertices.pri.Prox;
             while (aux.Prox != null)
             {
                 if (vertices.BuscarVertice((Vertice)aux.Dados).Arestas.Tamanho % 2 != 0)
@@ -223,7 +219,7 @@ namespace TPGrafos.Classes
             }
             return false;
         }
-        
+
         /// <summary>
         /// Um grafo complementar é um grafo resultante de outro grafo, um grafo complementar possui vértices e arestas necessárias para tornar um grafo completo
         /// </summary>
@@ -281,7 +277,7 @@ namespace TPGrafos.Classes
                 return Gcomplementar;
             }
         }
-      
+
         /// <summary>
         /// Método recursivo para simular o algortimo de busca em profundidade
         /// </summary>
@@ -292,7 +288,7 @@ namespace TPGrafos.Classes
             foreach (Vertice v2 in v.GetAdjacentes())
             {
                 if (v2.Cor == "BRANCO")
-                { this.Visitar(v2); }
+                { Visitar(v2); }
             }
             v.AtualizaCor();
         }
@@ -302,10 +298,10 @@ namespace TPGrafos.Classes
         /// </summary>
         private void ResetarCores()
         {
-            Elemento aux = this.vertices.pri.Prox;
+            Elemento aux = vertices.pri.Prox;
             while (aux.Prox != null)
             {
-                this.vertices.BuscarVertice((Vertice)aux.Dados).Cor = "BRANCO";
+                vertices.BuscarVertice((Vertice)aux.Dados).Cor = "BRANCO";
                 aux = aux.Prox;
             }
         }
@@ -317,14 +313,14 @@ namespace TPGrafos.Classes
         private int GetComponentes()
         {
             int componentes = 0;
-            this.ResetarCores();
+            ResetarCores();
 
-            Elemento aux = this.vertices.pri.Prox;
+            Elemento aux = vertices.pri.Prox;
             while (aux.Prox != null)
             {
-                if (this.vertices.BuscarVertice((Vertice)aux.Dados).Cor == "BRANCO")
+                if (vertices.BuscarVertice((Vertice)aux.Dados).Cor == "BRANCO")
                 {
-                    this.Visitar(this.vertices.BuscarVertice((Vertice)aux.Dados));
+                    Visitar(vertices.BuscarVertice((Vertice)aux.Dados));
                     componentes++;
                 }
                 aux = aux.Prox;
@@ -336,9 +332,28 @@ namespace TPGrafos.Classes
 
         //public GNaoDirigido GetAGMPrim(Vertice v1){}
 
-        //public GNaoDirigido GetAGMKruscal(Vertice v1){}
+        public GNaoDirigido GetAGMKruscal()
+        {
+            ArvoreGeradoraMinima arv = new ArvoreGeradoraMinima();
+            Aresta[] teste2;
+            GNaoDirigido g = new GNaoDirigido();
+            g.arestas = new ListaAresta();
+            g.vertices = this.vertices;
 
-        //public int GetCutVertices(){}
+            Aresta[] teste = this.Arestas.GeraVetor();
+            teste2 = arestas.Ordenar(teste);
 
+            for (int i = 0; i < teste2.Length; i++)
+            {   
+                g.arestas.Adicionar(teste2[i]);
+            }
+
+            //montar o grafo
+
+            return this;
+
+            //public int GetCutVertices(){}
+
+        }
     }
 }

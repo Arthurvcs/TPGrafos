@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TPGrafos.Classes.Estruturas
+﻿namespace TPGrafos.Classes.Estruturas
 {
     class ListaVertice : Lista
     {
@@ -37,8 +31,8 @@ namespace TPGrafos.Classes.Estruturas
         }
         public Vertice[] GeraVetor()
         {
-            Vertice[] vetor = new Vertice[this.Tamanho];
-            Elemento aux = this.pri.Prox;
+            Vertice[] vetor = new Vertice[Tamanho];
+            Elemento aux = pri.Prox;
             for (int i = 0; i < vetor.Length; i++)
             {
                 vetor[i] = (Vertice)aux.Dados;

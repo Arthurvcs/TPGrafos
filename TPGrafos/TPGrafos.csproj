@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Aresta.cs" />
+    <Compile Include="Classes\ArvoreGeradoraMinima.cs" />
     <Compile Include="Classes\Estruturas\Elemento.cs" />
     <Compile Include="Classes\Estruturas\IDados.cs" />
     <Compile Include="Classes\Estruturas\Lista.cs" />
