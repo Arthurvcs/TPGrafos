@@ -286,7 +286,6 @@ namespace TPGrafos
             DesabilitarVizualizacao();
 
             GNaoDirigido GRetorno = grafo;
-            GRetorno = GRetorno.GetAGMKruscal();
 
 
 

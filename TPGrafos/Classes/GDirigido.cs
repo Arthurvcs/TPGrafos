@@ -88,14 +88,6 @@ namespace TPGrafos.Classes
 
             Elemento auxV = vertices.pri.Prox;
 
-            //for (int i = 0; i <= visitados.Length; i++)
-            //{
-            //    visitados[i].vertice = (Vertice)auxV.Dados;
-            //    visitados[i].cor = 1;
-
-            //    auxV = auxV.Prox;
-            //}
-
             auxV = vStart;
             int fimBusca = 0;
             Vertice auxVx = (Vertice)auxV.Dados;

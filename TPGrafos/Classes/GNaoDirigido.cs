@@ -327,32 +327,6 @@ namespace TPGrafos.Classes
             }
 
             return componentes;
-        }
-
-
-        //public GNaoDirigido GetAGMPrim(Vertice v1){}
-
-        public GNaoDirigido GetAGMKruscal()
-        {
-            ArvoreGeradoraMinima arv = new ArvoreGeradoraMinima();
-            Aresta[] teste2;
-            GNaoDirigido g = new GNaoDirigido();
-            g.arestas = new ListaAresta();
-            g.vertices = this.vertices;
-
-            Aresta[] teste = this.Arestas.GeraVetor();
-            teste2 = arestas.Ordenar(teste);
-
-            for (int i = 0; i < teste2.Length; i++)
-            {   
-                g.arestas.Adicionar(teste2[i]);
-            }
-
-            //montar o grafo
-
-            return this;
-
-            //public int GetCutVertices(){}
 
         }
     }
